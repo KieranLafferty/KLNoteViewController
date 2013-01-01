@@ -1,7 +1,7 @@
 KLNoteViewController
 =======
 
-<img src="https://raw.github.com/KieranLafferty/KLNoteViewController/master/Images/iPhoneScreenshot.png" width="50%"/>
+<img src="https://raw.github.com/KieranLafferty/KLNoteViewController/master/KLNoteViewController/Images/iPhoneScreenshot.png" width="50%"/>
 
 A view controller that organizes multiple navigation controllers in a stack inspired by Evernote 5.0 app
 
