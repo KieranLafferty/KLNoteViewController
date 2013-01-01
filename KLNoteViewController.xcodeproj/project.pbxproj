@@ -1,0 +1,535 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		7740B0831692483E00449E10 /* background-dark-gray-tex.png in Resources */ = {isa = PBXBuildFile; fileRef = 7740B0811692483E00449E10 /* background-dark-gray-tex.png */; };
+		7740B0841692483E00449E10 /* background-dark-gray-tex@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7740B0821692483E00449E10 /* background-dark-gray-tex@2x.png */; };
+		7740B087169248D200449E10 /* NavigationControllerData.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7740B086169248D200449E10 /* NavigationControllerData.plist */; };
+		7740B08916924C6600449E10 /* premium-header-mid-skinny.png in Resources */ = {isa = PBXBuildFile; fileRef = 7740B08816924C6600449E10 /* premium-header-mid-skinny.png */; };
+		7740B08B16924DA100449E10 /* premium-header-mid-skinny@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7740B08A16924DA100449E10 /* premium-header-mid-skinny@2x.png */; };
+		7797ED24168F8E0A00CB59EA /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7797ED23168F8E0A00CB59EA /* UIKit.framework */; };
+		7797ED26168F8E0A00CB59EA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7797ED25168F8E0A00CB59EA /* Foundation.framework */; };
+		7797ED28168F8E0A00CB59EA /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7797ED27168F8E0A00CB59EA /* CoreGraphics.framework */; };
+		7797ED2E168F8E0A00CB59EA /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7797ED2C168F8E0A00CB59EA /* InfoPlist.strings */; };
+		7797ED30168F8E0A00CB59EA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7797ED2F168F8E0A00CB59EA /* main.m */; };
+		7797ED34168F8E0A00CB59EA /* KLAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7797ED33168F8E0A00CB59EA /* KLAppDelegate.m */; };
+		7797ED36168F8E0A00CB59EA /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 7797ED35168F8E0A00CB59EA /* Default.png */; };
+		7797ED38168F8E0A00CB59EA /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7797ED37168F8E0A00CB59EA /* Default@2x.png */; };
+		7797ED3A168F8E0A00CB59EA /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7797ED39168F8E0A00CB59EA /* Default-568h@2x.png */; };
+		7797ED3D168F8E0A00CB59EA /* MainStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7797ED3B168F8E0A00CB59EA /* MainStoryboard_iPhone.storyboard */; };
+		7797ED40168F8E0A00CB59EA /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7797ED3E168F8E0A00CB59EA /* MainStoryboard_iPad.storyboard */; };
+		7797ED43168F8E0A00CB59EA /* KLViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7797ED42168F8E0A00CB59EA /* KLViewController.m */; };
+		7797ED4B168F8E0A00CB59EA /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7797ED4A168F8E0A00CB59EA /* SenTestingKit.framework */; };
+		7797ED4C168F8E0A00CB59EA /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7797ED23168F8E0A00CB59EA /* UIKit.framework */; };
+		7797ED4D168F8E0A00CB59EA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7797ED25168F8E0A00CB59EA /* Foundation.framework */; };
+		7797ED55168F8E0A00CB59EA /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7797ED53168F8E0A00CB59EA /* InfoPlist.strings */; };
+		7797ED58168F8E0A00CB59EA /* KLNoteViewControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7797ED57168F8E0A00CB59EA /* KLNoteViewControllerTests.m */; };
+		7797ED69168F8E2300CB59EA /* bar-mid.png in Resources */ = {isa = PBXBuildFile; fileRef = 7797ED63168F8E2300CB59EA /* bar-mid.png */; };
+		7797ED6A168F8E2300CB59EA /* bar-mid@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7797ED64168F8E2300CB59EA /* bar-mid@2x.png */; };
+		7797ED6B168F8E2300CB59EA /* KLNoteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7797ED66168F8E2300CB59EA /* KLNoteViewController.m */; };
+		7797ED72168F972600CB59EA /* KLNoteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7797ED66168F8E2300CB59EA /* KLNoteViewController.m */; };
+		7797ED80168FACD800CB59EA /* bar-mid.png in Resources */ = {isa = PBXBuildFile; fileRef = 7797ED63168F8E2300CB59EA /* bar-mid.png */; };
+		7797ED81168FACD800CB59EA /* bar-mid@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7797ED64168F8E2300CB59EA /* bar-mid@2x.png */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		7797ED4E168F8E0A00CB59EA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7797ED16168F8E0A00CB59EA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7797ED1E168F8E0A00CB59EA;
+			remoteInfo = KLNoteViewController;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		7740B0811692483E00449E10 /* background-dark-gray-tex.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "background-dark-gray-tex.png"; sourceTree = "<group>"; };
+		7740B0821692483E00449E10 /* background-dark-gray-tex@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "background-dark-gray-tex@2x.png"; sourceTree = "<group>"; };
+		7740B086169248D200449E10 /* NavigationControllerData.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = NavigationControllerData.plist; sourceTree = "<group>"; };
+		7740B08816924C6600449E10 /* premium-header-mid-skinny.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "premium-header-mid-skinny.png"; sourceTree = "<group>"; };
+		7740B08A16924DA100449E10 /* premium-header-mid-skinny@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "premium-header-mid-skinny@2x.png"; sourceTree = "<group>"; };
+		7797ED1F168F8E0A00CB59EA /* KLNoteViewController.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KLNoteViewController.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		7797ED23168F8E0A00CB59EA /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		7797ED25168F8E0A00CB59EA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		7797ED27168F8E0A00CB59EA /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		7797ED2B168F8E0A00CB59EA /* KLNoteViewController-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "KLNoteViewController-Info.plist"; sourceTree = "<group>"; };
+		7797ED2D168F8E0A00CB59EA /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		7797ED2F168F8E0A00CB59EA /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		7797ED31168F8E0A00CB59EA /* KLNoteViewController-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "KLNoteViewController-Prefix.pch"; sourceTree = "<group>"; };
+		7797ED32168F8E0A00CB59EA /* KLAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KLAppDelegate.h; sourceTree = "<group>"; };
+		7797ED33168F8E0A00CB59EA /* KLAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KLAppDelegate.m; sourceTree = "<group>"; };
+		7797ED35168F8E0A00CB59EA /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		7797ED37168F8E0A00CB59EA /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		7797ED39168F8E0A00CB59EA /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		7797ED3C168F8E0A00CB59EA /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
+		7797ED3F168F8E0A00CB59EA /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
+		7797ED41168F8E0A00CB59EA /* KLViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KLViewController.h; sourceTree = "<group>"; };
+		7797ED42168F8E0A00CB59EA /* KLViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KLViewController.m; sourceTree = "<group>"; };
+		7797ED49168F8E0A00CB59EA /* KLNoteViewControllerTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KLNoteViewControllerTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		7797ED4A168F8E0A00CB59EA /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		7797ED52168F8E0A00CB59EA /* KLNoteViewControllerTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "KLNoteViewControllerTests-Info.plist"; sourceTree = "<group>"; };
+		7797ED54168F8E0A00CB59EA /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		7797ED56168F8E0A00CB59EA /* KLNoteViewControllerTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KLNoteViewControllerTests.h; sourceTree = "<group>"; };
+		7797ED57168F8E0A00CB59EA /* KLNoteViewControllerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KLNoteViewControllerTests.m; sourceTree = "<group>"; };
+		7797ED63168F8E2300CB59EA /* bar-mid.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bar-mid.png"; sourceTree = "<group>"; };
+		7797ED64168F8E2300CB59EA /* bar-mid@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bar-mid@2x.png"; sourceTree = "<group>"; };
+		7797ED65168F8E2300CB59EA /* KLNoteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KLNoteViewController.h; sourceTree = "<group>"; };
+		7797ED66168F8E2300CB59EA /* KLNoteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KLNoteViewController.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		7797ED1C168F8E0A00CB59EA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7797ED24168F8E0A00CB59EA /* UIKit.framework in Frameworks */,
+				7797ED26168F8E0A00CB59EA /* Foundation.framework in Frameworks */,
+				7797ED28168F8E0A00CB59EA /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7797ED45168F8E0A00CB59EA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7797ED4B168F8E0A00CB59EA /* SenTestingKit.framework in Frameworks */,
+				7797ED4C168F8E0A00CB59EA /* UIKit.framework in Frameworks */,
+				7797ED4D168F8E0A00CB59EA /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		7797ED14168F8E0A00CB59EA = {
+			isa = PBXGroup;
+			children = (
+				7797ED29168F8E0A00CB59EA /* KLNoteViewController */,
+				7797ED50168F8E0A00CB59EA /* KLNoteViewControllerTests */,
+				7797ED22168F8E0A00CB59EA /* Frameworks */,
+				7797ED20168F8E0A00CB59EA /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		7797ED20168F8E0A00CB59EA /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				7797ED1F168F8E0A00CB59EA /* KLNoteViewController.app */,
+				7797ED49168F8E0A00CB59EA /* KLNoteViewControllerTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		7797ED22168F8E0A00CB59EA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7797ED23168F8E0A00CB59EA /* UIKit.framework */,
+				7797ED25168F8E0A00CB59EA /* Foundation.framework */,
+				7797ED27168F8E0A00CB59EA /* CoreGraphics.framework */,
+				7797ED4A168F8E0A00CB59EA /* SenTestingKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		7797ED29168F8E0A00CB59EA /* KLNoteViewController */ = {
+			isa = PBXGroup;
+			children = (
+				7797ED6D168F8E3B00CB59EA /* Images */,
+				7797ED6C168F8E2800CB59EA /* Class */,
+				7797ED32168F8E0A00CB59EA /* KLAppDelegate.h */,
+				7797ED33168F8E0A00CB59EA /* KLAppDelegate.m */,
+				7797ED3B168F8E0A00CB59EA /* MainStoryboard_iPhone.storyboard */,
+				7797ED3E168F8E0A00CB59EA /* MainStoryboard_iPad.storyboard */,
+				7797ED41168F8E0A00CB59EA /* KLViewController.h */,
+				7797ED42168F8E0A00CB59EA /* KLViewController.m */,
+				7797ED2A168F8E0A00CB59EA /* Supporting Files */,
+				7740B086169248D200449E10 /* NavigationControllerData.plist */,
+			);
+			path = KLNoteViewController;
+			sourceTree = "<group>";
+		};
+		7797ED2A168F8E0A00CB59EA /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				7797ED2B168F8E0A00CB59EA /* KLNoteViewController-Info.plist */,
+				7797ED2C168F8E0A00CB59EA /* InfoPlist.strings */,
+				7797ED2F168F8E0A00CB59EA /* main.m */,
+				7797ED31168F8E0A00CB59EA /* KLNoteViewController-Prefix.pch */,
+				7797ED35168F8E0A00CB59EA /* Default.png */,
+				7797ED37168F8E0A00CB59EA /* Default@2x.png */,
+				7797ED39168F8E0A00CB59EA /* Default-568h@2x.png */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		7797ED50168F8E0A00CB59EA /* KLNoteViewControllerTests */ = {
+			isa = PBXGroup;
+			children = (
+				7797ED56168F8E0A00CB59EA /* KLNoteViewControllerTests.h */,
+				7797ED57168F8E0A00CB59EA /* KLNoteViewControllerTests.m */,
+				7797ED51168F8E0A00CB59EA /* Supporting Files */,
+			);
+			path = KLNoteViewControllerTests;
+			sourceTree = "<group>";
+		};
+		7797ED51168F8E0A00CB59EA /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				7797ED52168F8E0A00CB59EA /* KLNoteViewControllerTests-Info.plist */,
+				7797ED53168F8E0A00CB59EA /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		7797ED6C168F8E2800CB59EA /* Class */ = {
+			isa = PBXGroup;
+			children = (
+				7797ED65168F8E2300CB59EA /* KLNoteViewController.h */,
+				7797ED66168F8E2300CB59EA /* KLNoteViewController.m */,
+			);
+			name = Class;
+			sourceTree = "<group>";
+		};
+		7797ED6D168F8E3B00CB59EA /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				7740B08A16924DA100449E10 /* premium-header-mid-skinny@2x.png */,
+				7740B08816924C6600449E10 /* premium-header-mid-skinny.png */,
+				7740B0811692483E00449E10 /* background-dark-gray-tex.png */,
+				7740B0821692483E00449E10 /* background-dark-gray-tex@2x.png */,
+				7797ED63168F8E2300CB59EA /* bar-mid.png */,
+				7797ED64168F8E2300CB59EA /* bar-mid@2x.png */,
+			);
+			name = Images;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		7797ED1E168F8E0A00CB59EA /* KLNoteViewController */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7797ED5B168F8E0A00CB59EA /* Build configuration list for PBXNativeTarget "KLNoteViewController" */;
+			buildPhases = (
+				7797ED1B168F8E0A00CB59EA /* Sources */,
+				7797ED1C168F8E0A00CB59EA /* Frameworks */,
+				7797ED1D168F8E0A00CB59EA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = KLNoteViewController;
+			productName = KLNoteViewController;
+			productReference = 7797ED1F168F8E0A00CB59EA /* KLNoteViewController.app */;
+			productType = "com.apple.product-type.application";
+		};
+		7797ED48168F8E0A00CB59EA /* KLNoteViewControllerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7797ED5E168F8E0A00CB59EA /* Build configuration list for PBXNativeTarget "KLNoteViewControllerTests" */;
+			buildPhases = (
+				7797ED44168F8E0A00CB59EA /* Sources */,
+				7797ED45168F8E0A00CB59EA /* Frameworks */,
+				7797ED46168F8E0A00CB59EA /* Resources */,
+				7797ED47168F8E0A00CB59EA /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7797ED4F168F8E0A00CB59EA /* PBXTargetDependency */,
+			);
+			name = KLNoteViewControllerTests;
+			productName = KLNoteViewControllerTests;
+			productReference = 7797ED49168F8E0A00CB59EA /* KLNoteViewControllerTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		7797ED16168F8E0A00CB59EA /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = KL;
+				LastUpgradeCheck = 0450;
+				ORGANIZATIONNAME = "Kieran Lafferty";
+			};
+			buildConfigurationList = 7797ED19168F8E0A00CB59EA /* Build configuration list for PBXProject "KLNoteViewController" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 7797ED14168F8E0A00CB59EA;
+			productRefGroup = 7797ED20168F8E0A00CB59EA /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				7797ED1E168F8E0A00CB59EA /* KLNoteViewController */,
+				7797ED48168F8E0A00CB59EA /* KLNoteViewControllerTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		7797ED1D168F8E0A00CB59EA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7797ED80168FACD800CB59EA /* bar-mid.png in Resources */,
+				7797ED81168FACD800CB59EA /* bar-mid@2x.png in Resources */,
+				7797ED2E168F8E0A00CB59EA /* InfoPlist.strings in Resources */,
+				7797ED36168F8E0A00CB59EA /* Default.png in Resources */,
+				7797ED38168F8E0A00CB59EA /* Default@2x.png in Resources */,
+				7797ED3A168F8E0A00CB59EA /* Default-568h@2x.png in Resources */,
+				7797ED3D168F8E0A00CB59EA /* MainStoryboard_iPhone.storyboard in Resources */,
+				7797ED40168F8E0A00CB59EA /* MainStoryboard_iPad.storyboard in Resources */,
+				7740B0831692483E00449E10 /* background-dark-gray-tex.png in Resources */,
+				7740B0841692483E00449E10 /* background-dark-gray-tex@2x.png in Resources */,
+				7740B087169248D200449E10 /* NavigationControllerData.plist in Resources */,
+				7740B08916924C6600449E10 /* premium-header-mid-skinny.png in Resources */,
+				7740B08B16924DA100449E10 /* premium-header-mid-skinny@2x.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7797ED46168F8E0A00CB59EA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7797ED55168F8E0A00CB59EA /* InfoPlist.strings in Resources */,
+				7797ED69168F8E2300CB59EA /* bar-mid.png in Resources */,
+				7797ED6A168F8E2300CB59EA /* bar-mid@2x.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		7797ED47168F8E0A00CB59EA /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		7797ED1B168F8E0A00CB59EA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7797ED72168F972600CB59EA /* KLNoteViewController.m in Sources */,
+				7797ED30168F8E0A00CB59EA /* main.m in Sources */,
+				7797ED34168F8E0A00CB59EA /* KLAppDelegate.m in Sources */,
+				7797ED43168F8E0A00CB59EA /* KLViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7797ED44168F8E0A00CB59EA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7797ED58168F8E0A00CB59EA /* KLNoteViewControllerTests.m in Sources */,
+				7797ED6B168F8E2300CB59EA /* KLNoteViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		7797ED4F168F8E0A00CB59EA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7797ED1E168F8E0A00CB59EA /* KLNoteViewController */;
+			targetProxy = 7797ED4E168F8E0A00CB59EA /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		7797ED2C168F8E0A00CB59EA /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7797ED2D168F8E0A00CB59EA /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		7797ED3B168F8E0A00CB59EA /* MainStoryboard_iPhone.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7797ED3C168F8E0A00CB59EA /* en */,
+			);
+			name = MainStoryboard_iPhone.storyboard;
+			sourceTree = "<group>";
+		};
+		7797ED3E168F8E0A00CB59EA /* MainStoryboard_iPad.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7797ED3F168F8E0A00CB59EA /* en */,
+			);
+			name = MainStoryboard_iPad.storyboard;
+			sourceTree = "<group>";
+		};
+		7797ED53168F8E0A00CB59EA /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7797ED54168F8E0A00CB59EA /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		7797ED59168F8E0A00CB59EA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		7797ED5A168F8E0A00CB59EA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		7797ED5C168F8E0A00CB59EA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "KLNoteViewController/KLNoteViewController-Prefix.pch";
+				INFOPLIST_FILE = "KLNoteViewController/KLNoteViewController-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		7797ED5D168F8E0A00CB59EA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "KLNoteViewController/KLNoteViewController-Prefix.pch";
+				INFOPLIST_FILE = "KLNoteViewController/KLNoteViewController-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		7797ED5F168F8E0A00CB59EA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/KLNoteViewController.app/KLNoteViewController";
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "KLNoteViewController/KLNoteViewController-Prefix.pch";
+				INFOPLIST_FILE = "KLNoteViewControllerTests/KLNoteViewControllerTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		7797ED60168F8E0A00CB59EA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/KLNoteViewController.app/KLNoteViewController";
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "KLNoteViewController/KLNoteViewController-Prefix.pch";
+				INFOPLIST_FILE = "KLNoteViewControllerTests/KLNoteViewControllerTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		7797ED19168F8E0A00CB59EA /* Build configuration list for PBXProject "KLNoteViewController" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7797ED59168F8E0A00CB59EA /* Debug */,
+				7797ED5A168F8E0A00CB59EA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7797ED5B168F8E0A00CB59EA /* Build configuration list for PBXNativeTarget "KLNoteViewController" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7797ED5C168F8E0A00CB59EA /* Debug */,
+				7797ED5D168F8E0A00CB59EA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7797ED5E168F8E0A00CB59EA /* Build configuration list for PBXNativeTarget "KLNoteViewControllerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7797ED5F168F8E0A00CB59EA /* Debug */,
+				7797ED60168F8E0A00CB59EA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 7797ED16168F8E0A00CB59EA /* Project object */;
+}

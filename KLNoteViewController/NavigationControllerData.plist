@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>image</key>
+		<string>premium-header-mid-skinny.png</string>
+		<key>title</key>
+		<string>Go Premium</string>
+	</dict>
+	<dict>
+		<key>image</key>
+		<string>bar-mid.png</string>
+		<key>title</key>
+		<string>Places</string>
+	</dict>
+	<dict>
+		<key>image</key>
+		<string>bar-mid.png</string>
+		<key>title</key>
+		<string>Tags</string>
+	</dict>
+	<dict>
+		<key>image</key>
+		<string>bar-mid.png</string>
+		<key>title</key>
+		<string>Notebooks</string>
+	</dict>
+	<dict>
+		<key>image</key>
+		<string>bar-mid.png</string>
+		<key>title</key>
+		<string>All Notes</string>
+	</dict>
+</array>
+</plist>
