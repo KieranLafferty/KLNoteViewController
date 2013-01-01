@@ -21,7 +21,7 @@ Import the header file and declare your controller to subclass KLNoteViewControl
 	
 	@interface KLRootViewController : KLNoteViewController
 
-Import the header file and declare your controller to conform to KLNoteViewControllerDataSource and KLNoteViewControllerDelegate
+OR, Import the header file and declare your controller to conform to KLNoteViewControllerDataSource and KLNoteViewControllerDelegate
 
 	#import "KLNoteViewController.h"
 
