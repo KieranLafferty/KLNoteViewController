@@ -3,11 +3,11 @@ KLNoteViewController
 
 <img src="https://raw.github.com/KieranLafferty/KLNoteViewController/master/KLNoteViewController/Images/iPhoneScreenshot.png" width="50%"/>
 
-A view controller that organizes multiple navigation controllers in a stack inspired by Evernote 5.0 app
+A control that organizes multiple navigation controllers in a stack inspired by Evernote 5.0 app
 
 Note: KLNoteViewController is intended for use with portrait orientation on iPhone/iPad/iPod Touch.
 
-[Check out the Demo](http://www.youtube.com/watch?v=DNPlWlzhSBQ&feature=youtube_gdata_player) *Excuse the graphics glitches and lag due to my slow computer.*
+[Check out the Demo](http://www.youtube.com/watch?v=igh9bAyjZrM&feature=youtube_gdata_player) *Excuse the graphics glitches and lag due to my slow computer.*
 
 ## Installation ##
 
