@@ -36,7 +36,6 @@
     // Dispose of any resources that can be recreated.
 }
 - (NSInteger)numberOfControllerCardsInNoteView:(KLNoteViewController*) noteView {
-    //Arbitrarily retun 5
     return  [self.navigationControllers count];
 }
 - (UINavigationController *)noteView:(KLNoteViewController*)noteView controllerCardForRowAtIndexPath:(NSIndexPath *)indexPath {

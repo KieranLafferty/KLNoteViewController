@@ -7,20 +7,25 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		7740B0831692483E00449E10 /* background-dark-gray-tex.png in Resources */ = {isa = PBXBuildFile; fileRef = 7740B0811692483E00449E10 /* background-dark-gray-tex.png */; };
-		7740B0841692483E00449E10 /* background-dark-gray-tex@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7740B0821692483E00449E10 /* background-dark-gray-tex@2x.png */; };
 		7740B087169248D200449E10 /* NavigationControllerData.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7740B086169248D200449E10 /* NavigationControllerData.plist */; };
-		7740B08916924C6600449E10 /* premium-header-mid-skinny.png in Resources */ = {isa = PBXBuildFile; fileRef = 7740B08816924C6600449E10 /* premium-header-mid-skinny.png */; };
-		7740B08B16924DA100449E10 /* premium-header-mid-skinny@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7740B08A16924DA100449E10 /* premium-header-mid-skinny@2x.png */; };
+		7740B0A51693976500449E10 /* background-dark-gray-tex.png in Resources */ = {isa = PBXBuildFile; fileRef = 7740B09B1693976500449E10 /* background-dark-gray-tex.png */; };
+		7740B0A61693976500449E10 /* background-dark-gray-tex@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7740B09C1693976500449E10 /* background-dark-gray-tex@2x.png */; };
+		7740B0A71693976500449E10 /* bar-mid.png in Resources */ = {isa = PBXBuildFile; fileRef = 7740B09D1693976500449E10 /* bar-mid.png */; };
+		7740B0A81693976500449E10 /* bar-mid@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7740B09E1693976500449E10 /* bar-mid@2x.png */; };
+		7740B0A91693976500449E10 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7740B09F1693976500449E10 /* Default-568h@2x.png */; };
+		7740B0AA1693976500449E10 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 7740B0A01693976500449E10 /* Default.png */; };
+		7740B0AB1693976500449E10 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7740B0A11693976500449E10 /* Default@2x.png */; };
+		7740B0AC1693976500449E10 /* iPhoneScreenshot.png in Resources */ = {isa = PBXBuildFile; fileRef = 7740B0A21693976500449E10 /* iPhoneScreenshot.png */; };
+		7740B0AD1693976500449E10 /* premium-header-mid-skinny.png in Resources */ = {isa = PBXBuildFile; fileRef = 7740B0A31693976500449E10 /* premium-header-mid-skinny.png */; };
+		7740B0AE1693976500449E10 /* premium-header-mid-skinny@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7740B0A41693976500449E10 /* premium-header-mid-skinny@2x.png */; };
+		7740B0B2169397A800449E10 /* KLNoteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7740B0B1169397A800449E10 /* KLNoteViewController.m */; };
+		7740B0B3169397AF00449E10 /* KLNoteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7740B0B1169397A800449E10 /* KLNoteViewController.m */; };
 		7797ED24168F8E0A00CB59EA /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7797ED23168F8E0A00CB59EA /* UIKit.framework */; };
 		7797ED26168F8E0A00CB59EA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7797ED25168F8E0A00CB59EA /* Foundation.framework */; };
 		7797ED28168F8E0A00CB59EA /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7797ED27168F8E0A00CB59EA /* CoreGraphics.framework */; };
 		7797ED2E168F8E0A00CB59EA /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7797ED2C168F8E0A00CB59EA /* InfoPlist.strings */; };
 		7797ED30168F8E0A00CB59EA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7797ED2F168F8E0A00CB59EA /* main.m */; };
 		7797ED34168F8E0A00CB59EA /* KLAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7797ED33168F8E0A00CB59EA /* KLAppDelegate.m */; };
-		7797ED36168F8E0A00CB59EA /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 7797ED35168F8E0A00CB59EA /* Default.png */; };
-		7797ED38168F8E0A00CB59EA /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7797ED37168F8E0A00CB59EA /* Default@2x.png */; };
-		7797ED3A168F8E0A00CB59EA /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7797ED39168F8E0A00CB59EA /* Default-568h@2x.png */; };
 		7797ED3D168F8E0A00CB59EA /* MainStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7797ED3B168F8E0A00CB59EA /* MainStoryboard_iPhone.storyboard */; };
 		7797ED40168F8E0A00CB59EA /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7797ED3E168F8E0A00CB59EA /* MainStoryboard_iPad.storyboard */; };
 		7797ED43168F8E0A00CB59EA /* KLViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7797ED42168F8E0A00CB59EA /* KLViewController.m */; };
@@ -29,12 +34,6 @@
 		7797ED4D168F8E0A00CB59EA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7797ED25168F8E0A00CB59EA /* Foundation.framework */; };
 		7797ED55168F8E0A00CB59EA /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7797ED53168F8E0A00CB59EA /* InfoPlist.strings */; };
 		7797ED58168F8E0A00CB59EA /* KLNoteViewControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7797ED57168F8E0A00CB59EA /* KLNoteViewControllerTests.m */; };
-		7797ED69168F8E2300CB59EA /* bar-mid.png in Resources */ = {isa = PBXBuildFile; fileRef = 7797ED63168F8E2300CB59EA /* bar-mid.png */; };
-		7797ED6A168F8E2300CB59EA /* bar-mid@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7797ED64168F8E2300CB59EA /* bar-mid@2x.png */; };
-		7797ED6B168F8E2300CB59EA /* KLNoteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7797ED66168F8E2300CB59EA /* KLNoteViewController.m */; };
-		7797ED72168F972600CB59EA /* KLNoteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7797ED66168F8E2300CB59EA /* KLNoteViewController.m */; };
-		7797ED80168FACD800CB59EA /* bar-mid.png in Resources */ = {isa = PBXBuildFile; fileRef = 7797ED63168F8E2300CB59EA /* bar-mid.png */; };
-		7797ED81168FACD800CB59EA /* bar-mid@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7797ED64168F8E2300CB59EA /* bar-mid@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,11 +47,19 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		7740B0811692483E00449E10 /* background-dark-gray-tex.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "background-dark-gray-tex.png"; sourceTree = "<group>"; };
-		7740B0821692483E00449E10 /* background-dark-gray-tex@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "background-dark-gray-tex@2x.png"; sourceTree = "<group>"; };
 		7740B086169248D200449E10 /* NavigationControllerData.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = NavigationControllerData.plist; sourceTree = "<group>"; };
-		7740B08816924C6600449E10 /* premium-header-mid-skinny.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "premium-header-mid-skinny.png"; sourceTree = "<group>"; };
-		7740B08A16924DA100449E10 /* premium-header-mid-skinny@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "premium-header-mid-skinny@2x.png"; sourceTree = "<group>"; };
+		7740B09B1693976500449E10 /* background-dark-gray-tex.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "background-dark-gray-tex.png"; sourceTree = "<group>"; };
+		7740B09C1693976500449E10 /* background-dark-gray-tex@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "background-dark-gray-tex@2x.png"; sourceTree = "<group>"; };
+		7740B09D1693976500449E10 /* bar-mid.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bar-mid.png"; sourceTree = "<group>"; };
+		7740B09E1693976500449E10 /* bar-mid@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bar-mid@2x.png"; sourceTree = "<group>"; };
+		7740B09F1693976500449E10 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		7740B0A01693976500449E10 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		7740B0A11693976500449E10 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		7740B0A21693976500449E10 /* iPhoneScreenshot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iPhoneScreenshot.png; sourceTree = "<group>"; };
+		7740B0A31693976500449E10 /* premium-header-mid-skinny.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "premium-header-mid-skinny.png"; sourceTree = "<group>"; };
+		7740B0A41693976500449E10 /* premium-header-mid-skinny@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "premium-header-mid-skinny@2x.png"; sourceTree = "<group>"; };
+		7740B0B0169397A800449E10 /* KLNoteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KLNoteViewController.h; path = Class/KLNoteViewController.h; sourceTree = SOURCE_ROOT; };
+		7740B0B1169397A800449E10 /* KLNoteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KLNoteViewController.m; path = Class/KLNoteViewController.m; sourceTree = SOURCE_ROOT; };
 		7797ED1F168F8E0A00CB59EA /* KLNoteViewController.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KLNoteViewController.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7797ED23168F8E0A00CB59EA /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		7797ED25168F8E0A00CB59EA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -76,10 +83,6 @@
 		7797ED54168F8E0A00CB59EA /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		7797ED56168F8E0A00CB59EA /* KLNoteViewControllerTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KLNoteViewControllerTests.h; sourceTree = "<group>"; };
 		7797ED57168F8E0A00CB59EA /* KLNoteViewControllerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KLNoteViewControllerTests.m; sourceTree = "<group>"; };
-		7797ED63168F8E2300CB59EA /* bar-mid.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bar-mid.png"; sourceTree = "<group>"; };
-		7797ED64168F8E2300CB59EA /* bar-mid@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bar-mid@2x.png"; sourceTree = "<group>"; };
-		7797ED65168F8E2300CB59EA /* KLNoteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KLNoteViewController.h; sourceTree = "<group>"; };
-		7797ED66168F8E2300CB59EA /* KLNoteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KLNoteViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +109,32 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7740B0961693975600449E10 /* Class */ = {
+			isa = PBXGroup;
+			children = (
+				7740B0B0169397A800449E10 /* KLNoteViewController.h */,
+				7740B0B1169397A800449E10 /* KLNoteViewController.m */,
+			);
+			path = Class;
+			sourceTree = "<group>";
+		};
+		7740B09A1693976500449E10 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				7740B09B1693976500449E10 /* background-dark-gray-tex.png */,
+				7740B09C1693976500449E10 /* background-dark-gray-tex@2x.png */,
+				7740B09D1693976500449E10 /* bar-mid.png */,
+				7740B09E1693976500449E10 /* bar-mid@2x.png */,
+				7740B09F1693976500449E10 /* Default-568h@2x.png */,
+				7740B0A01693976500449E10 /* Default.png */,
+				7740B0A11693976500449E10 /* Default@2x.png */,
+				7740B0A21693976500449E10 /* iPhoneScreenshot.png */,
+				7740B0A31693976500449E10 /* premium-header-mid-skinny.png */,
+				7740B0A41693976500449E10 /* premium-header-mid-skinny@2x.png */,
+			);
+			path = Images;
+			sourceTree = "<group>";
+		};
 		7797ED14168F8E0A00CB59EA = {
 			isa = PBXGroup;
 			children = (
@@ -139,8 +168,8 @@
 		7797ED29168F8E0A00CB59EA /* KLNoteViewController */ = {
 			isa = PBXGroup;
 			children = (
-				7797ED6D168F8E3B00CB59EA /* Images */,
-				7797ED6C168F8E2800CB59EA /* Class */,
+				7740B09A1693976500449E10 /* Images */,
+				7740B0961693975600449E10 /* Class */,
 				7797ED32168F8E0A00CB59EA /* KLAppDelegate.h */,
 				7797ED33168F8E0A00CB59EA /* KLAppDelegate.m */,
 				7797ED3B168F8E0A00CB59EA /* MainStoryboard_iPhone.storyboard */,
@@ -184,28 +213,6 @@
 				7797ED53168F8E0A00CB59EA /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		7797ED6C168F8E2800CB59EA /* Class */ = {
-			isa = PBXGroup;
-			children = (
-				7797ED65168F8E2300CB59EA /* KLNoteViewController.h */,
-				7797ED66168F8E2300CB59EA /* KLNoteViewController.m */,
-			);
-			name = Class;
-			sourceTree = "<group>";
-		};
-		7797ED6D168F8E3B00CB59EA /* Images */ = {
-			isa = PBXGroup;
-			children = (
-				7740B08A16924DA100449E10 /* premium-header-mid-skinny@2x.png */,
-				7740B08816924C6600449E10 /* premium-header-mid-skinny.png */,
-				7740B0811692483E00449E10 /* background-dark-gray-tex.png */,
-				7740B0821692483E00449E10 /* background-dark-gray-tex@2x.png */,
-				7797ED63168F8E2300CB59EA /* bar-mid.png */,
-				7797ED64168F8E2300CB59EA /* bar-mid@2x.png */,
-			);
-			name = Images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -280,19 +287,20 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7797ED80168FACD800CB59EA /* bar-mid.png in Resources */,
-				7797ED81168FACD800CB59EA /* bar-mid@2x.png in Resources */,
 				7797ED2E168F8E0A00CB59EA /* InfoPlist.strings in Resources */,
-				7797ED36168F8E0A00CB59EA /* Default.png in Resources */,
-				7797ED38168F8E0A00CB59EA /* Default@2x.png in Resources */,
-				7797ED3A168F8E0A00CB59EA /* Default-568h@2x.png in Resources */,
 				7797ED3D168F8E0A00CB59EA /* MainStoryboard_iPhone.storyboard in Resources */,
 				7797ED40168F8E0A00CB59EA /* MainStoryboard_iPad.storyboard in Resources */,
-				7740B0831692483E00449E10 /* background-dark-gray-tex.png in Resources */,
-				7740B0841692483E00449E10 /* background-dark-gray-tex@2x.png in Resources */,
 				7740B087169248D200449E10 /* NavigationControllerData.plist in Resources */,
-				7740B08916924C6600449E10 /* premium-header-mid-skinny.png in Resources */,
-				7740B08B16924DA100449E10 /* premium-header-mid-skinny@2x.png in Resources */,
+				7740B0A51693976500449E10 /* background-dark-gray-tex.png in Resources */,
+				7740B0A61693976500449E10 /* background-dark-gray-tex@2x.png in Resources */,
+				7740B0A71693976500449E10 /* bar-mid.png in Resources */,
+				7740B0A81693976500449E10 /* bar-mid@2x.png in Resources */,
+				7740B0A91693976500449E10 /* Default-568h@2x.png in Resources */,
+				7740B0AA1693976500449E10 /* Default.png in Resources */,
+				7740B0AB1693976500449E10 /* Default@2x.png in Resources */,
+				7740B0AC1693976500449E10 /* iPhoneScreenshot.png in Resources */,
+				7740B0AD1693976500449E10 /* premium-header-mid-skinny.png in Resources */,
+				7740B0AE1693976500449E10 /* premium-header-mid-skinny@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -301,8 +309,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				7797ED55168F8E0A00CB59EA /* InfoPlist.strings in Resources */,
-				7797ED69168F8E2300CB59EA /* bar-mid.png in Resources */,
-				7797ED6A168F8E2300CB59EA /* bar-mid@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -329,7 +335,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7797ED72168F972600CB59EA /* KLNoteViewController.m in Sources */,
+				7740B0B3169397AF00449E10 /* KLNoteViewController.m in Sources */,
 				7797ED30168F8E0A00CB59EA /* main.m in Sources */,
 				7797ED34168F8E0A00CB59EA /* KLAppDelegate.m in Sources */,
 				7797ED43168F8E0A00CB59EA /* KLViewController.m in Sources */,
@@ -341,7 +347,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7797ED58168F8E0A00CB59EA /* KLNoteViewControllerTests.m in Sources */,
-				7797ED6B168F8E2300CB59EA /* KLNoteViewController.m in Sources */,
+				7740B0B2169397A800449E10 /* KLNoteViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
