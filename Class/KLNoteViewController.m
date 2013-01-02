@@ -258,7 +258,7 @@
 
 -(void) didPerformLongPress:(UILongPressGestureRecognizer*) recognizer {
 
-    if (self.state == KLControllerCardStateDefault) {
+    if (self.state == KLControllerCardStateDefault && recognizer.state == UIGestureRecognizerStateEnded) {
         //Go to full size
         [self setState:KLControllerCardStateFullScreen animated:YES];
     }
