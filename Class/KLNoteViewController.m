@@ -242,7 +242,7 @@
         UILongPressGestureRecognizer* pressGesture = [[UILongPressGestureRecognizer alloc] initWithTarget:self
                                                                                              action:@selector(didPerformLongPress:)];
         [pressGesture setMinimumPressDuration: kDefaultMinimumPressDuration];
-        
+
         //Add the gestures to the navigationcontrollers navigation bar
         [self.navigationController.navigationBar addGestureRecognizer: panGesture];
         [self.navigationController.navigationBar addGestureRecognizer:pressGesture];
