@@ -279,14 +279,16 @@
 -(void) didPerformPanGesture:(UIPanGestureRecognizer*) recognizer {
     CGPoint location = [recognizer locationInView: self.noteViewController.view];
     CGPoint translation = [recognizer translationInView: self];
-    
     if (recognizer.state == UIGestureRecognizerStateBegan) {
         //Begin animation
         if (self.state == KLControllerCardStateFullScreen) {
             //Shrink to regular size
             [self shrinkCardToScaledSize:YES];
         }
+        //Save the offet to add to the height
+        self.panOriginOffset = [recognizer locationInView: self].y;
     }
+    
     else if (recognizer.state == UIGestureRecognizerStateChanged) {
         //Check if panning downwards and move other cards
         if (translation.y > 0){
@@ -297,7 +299,6 @@
                 if ([self.delegate respondsToSelector:@selector(controllerCard:didUpdatePanPercentage:)]) {
                     [self.delegate controllerCard:self didUpdatePanPercentage: [self percentageDistanceTravelled]];
                 }
-                
             }
             //Panning downwards from default state
             else if (self.state == KLControllerCardStateDefault && self.frame.origin.y > originY) {
@@ -309,7 +310,7 @@
         }
         
         //Track the movement of the users finger during the swipe gesture
-        [self setYCoordinate: location.y];
+        [self setYCoordinate: location.y - self.panOriginOffset];
     }
     else if (recognizer.state == UIGestureRecognizerStateEnded) {
         //Check if it should return to the origin location
@@ -384,7 +385,8 @@
     }
     //Hidden State - Bottom
     else if (state == KLControllerCardStateHiddenBottom) {
-        [self setYCoordinate: self.noteViewController.view.frame.size.height];
+        //Move it off screen and far enough down that the shadow does not appear on screen
+        [self setYCoordinate: self.noteViewController.view.frame.size.height + abs(kDefaultShadowOffset.height)*3];
     }
     //Hidden State - Top
     else if (state == KLControllerCardStateHiddenTop) {

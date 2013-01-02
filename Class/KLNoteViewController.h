@@ -41,6 +41,7 @@ typedef UInt32 KLControllerCardState;
 @property (nonatomic, strong) KLNoteViewController* noteViewController;
 @property (nonatomic, strong) id<KLControllerCardDelegate> delegate;
 @property (nonatomic) CGPoint origin;
+@property (nonatomic) CGFloat panOriginOffset;
 @property (nonatomic) KLControllerCardState state;
 -(id) initWithNoteViewController: (KLNoteViewController*) noteView navigationController:(UINavigationController*) navigationController index:(NSInteger) index;
 -(void) setState:(KLControllerCardState) state animated:(BOOL) animated;
