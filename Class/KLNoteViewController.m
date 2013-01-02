@@ -226,14 +226,15 @@
 
     if (self = [super initWithFrame: navigationController.view.bounds]) {
         //Initialize the view's properties
-        [self shrinkCardToScaledSize:NO];
         [self setAutoresizesSubviews:YES];
         [self setAutoresizingMask: UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth];
         [self addSubview: navigationController.view];
+        
+    
+        //Configure navigation controller to have rounded edges while maintaining shadow
         [self.navigationController.view.layer setCornerRadius: kDefaultCornerRadius];
         [self.navigationController.view setClipsToBounds:YES];
-        [self setYCoordinate: originY];
-        [self redrawShadow];
+        
         //Add Pan Gesture
         UIPanGestureRecognizer* panGesture = [[UIPanGestureRecognizer alloc] initWithTarget:self
                                                                                      action:@selector(didPerformPanGesture:)];        
@@ -246,10 +247,9 @@
         [self.navigationController.navigationBar addGestureRecognizer: panGesture];
         [self.navigationController.navigationBar addGestureRecognizer:pressGesture];
         
-        //Monitor orientation changes
-
         //Initialize the state to default
-        self.state = KLControllerCardStateDefault;
+        [self setState:KLControllerCardStateDefault
+              animated:NO];
     }
     return self;
 }
@@ -257,7 +257,7 @@
 #pragma mark - UIGestureRecognizer action handlers
 
 -(void) didPerformLongPress:(UILongPressGestureRecognizer*) recognizer {
-    
+
     if (self.state == KLControllerCardStateDefault) {
         //Go to full size
         [self setState:KLControllerCardStateFullScreen animated:YES];
@@ -374,12 +374,12 @@
     }
     //Full Screen State
     if (state == KLControllerCardStateFullScreen) {
-        [self expandCardToFullSize:YES];
+        [self expandCardToFullSize: animated];
         [self setYCoordinate: 0];
     }
     //Default State
     else if (state == KLControllerCardStateDefault) {
-        [self shrinkCardToScaledSize:YES];
+        [self shrinkCardToScaledSize: animated];
         [self setYCoordinate: originY];
     }
     //Hidden State - Bottom
@@ -393,7 +393,9 @@
     
     //Notify the delegate of the state change (even if state changed to self)
     KLControllerCardState lastState = self.state;
+    //Update to the new state
     [self setState:state];
+    //Notify the delegate
     if ([self.delegate respondsToSelector:@selector(controllerCard:didChangeToDisplayState:fromDisplayState:)]) {
         [self.delegate controllerCard:self
               didChangeToDisplayState:state fromDisplayState: lastState];
