@@ -70,6 +70,7 @@
     //Position should start at kDefaultVerticalOrigin and move down by size of nav toolbar for each additional nav controller
     return kDefaultVerticalOrigin + originOffset;
 }
+
 - (CGFloat) scalingFactorForIndex: (NSInteger) index {
     //Items should get progressively smaller based on their index in the navigation controller array
     return  powf(kDefaultMinimizedScalingFactor, (totalCards - index));
@@ -113,6 +114,7 @@
         [navigationContainer removeFromSuperview];
     }
 }
+
 - (NSIndexPath*) indexPathForControllerCard: (KLControllerCard*) navigationContainer {
     NSInteger rowNumber = [self.controllerCards indexOfObject: navigationContainer];
     
@@ -129,6 +131,7 @@
         return index > currentIndex;
     }]];
 }
+
 - (NSArray*) controllerCardBelowCard:(KLControllerCard*) card {
     NSInteger index = [self.controllerCards indexOfObject: card];
     
@@ -150,7 +153,6 @@
 - (UINavigationController *)noteView:(KLNoteViewController*)noteView controllerCardForRowAtIndexPath:(NSIndexPath *)indexPath {
     return [self noteView:noteView controllerCardForRowAtIndexPath:indexPath];
 }
-
 
 #pragma mark - Delegate implementation for KLControllerCard
 
@@ -190,6 +192,7 @@
               didChangeToDisplayState:toState fromDisplayState: fromState];
     }
 }
+
 -(void) controllerCard:(KLControllerCard*)controllerCard didUpdatePanPercentage:(CGFloat) percentage {
     if (controllerCard.state == KLControllerCardStateFullScreen) {
         for (KLControllerCard* currentCard in [self controllerCardAboveCard: controllerCard]) {
@@ -205,6 +208,7 @@
         }
     }
 }
+
 @end
 
 @interface KLControllerCard ()
@@ -251,7 +255,6 @@
     return self;
 }
 
-
 #pragma mark - UIGestureRecognizer action handlers
 
 -(void) didPerformLongPress:(UILongPressGestureRecognizer*) recognizer {
@@ -261,6 +264,7 @@
         [self setState:KLControllerCardStateFullScreen animated:YES];
     }
 }
+
 -(void) redrawShadow {
     if (kDefaultShadowEnabled) {
         UIBezierPath *path  =  [UIBezierPath bezierPathWithRoundedRect:[self bounds] cornerRadius:kDefaultCornerRadius];
@@ -272,6 +276,7 @@
         [self.layer setShadowPath: [path CGPath]];
     }
 }
+
 -(void) didPerformPanGesture:(UIPanGestureRecognizer*) recognizer {
     CGPoint location = [recognizer locationInView: self.noteViewController.view];
     CGPoint translation = [recognizer translationInView: self];
@@ -339,6 +344,7 @@
         [self setTransform: CGAffineTransformMakeScale(scalingFactor, scalingFactor)];
     }
 }
+
 -(void) expandCardToFullSize:(BOOL) animated {
     
     //Set the scaling factor if not already set
@@ -413,8 +419,10 @@
 -(void) setYCoordinate:(CGFloat)yValue {
     [self setFrame:CGRectMake(self.frame.origin.x, yValue, self.frame.size.width, self.frame.size.height)];
 }
+
 -(void) setFrame:(CGRect)frame {
     [super setFrame: frame];
     [self redrawShadow];
 }
+
 @end
