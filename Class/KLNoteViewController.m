@@ -53,8 +53,10 @@
     
 	// Do any additional setup after loading the view.
     [self reloadInputViews];
-
+    
+    
 }
+
 #pragma Drawing Methods - Used to position and present the navigation controllers on screen
 
 - (CGFloat) defaultVerticalOriginForIndex: (NSInteger) index {
@@ -228,15 +230,7 @@
         [self.navigationController.view.layer setCornerRadius: kDefaultCornerRadius];
         [self.navigationController.view setClipsToBounds:YES];
         [self setYCoordinate: originY];
-        if (kDefaultShadowEnabled) {
-            UIBezierPath *path  =  [UIBezierPath bezierPathWithRoundedRect:[self bounds] cornerRadius:kDefaultCornerRadius];
-            
-            [self.layer setShadowOpacity: kDefaultShadowOpacity];
-            [self.layer setShadowOffset: kDefaultShadowOffset];
-            [self.layer setShadowRadius: kDefaultShadowRadius];
-            [self.layer setShadowColor: [kDefaultShadowColor CGColor]];
-            [self.layer setShadowPath: [path CGPath]];
-        }
+        [self redrawShadow];
         //Add Pan Gesture
         UIPanGestureRecognizer* panGesture = [[UIPanGestureRecognizer alloc] initWithTarget:self
                                                                                      action:@selector(didPerformPanGesture:)];        
@@ -249,11 +243,14 @@
         [self.navigationController.navigationBar addGestureRecognizer: panGesture];
         [self.navigationController.navigationBar addGestureRecognizer:pressGesture];
         
+        //Monitor orientation changes
+
         //Initialize the state to default
         self.state = KLControllerCardStateDefault;
     }
     return self;
 }
+
 
 #pragma mark - UIGestureRecognizer action handlers
 
@@ -262,6 +259,17 @@
     if (self.state == KLControllerCardStateDefault) {
         //Go to full size
         [self setState:KLControllerCardStateFullScreen animated:YES];
+    }
+}
+-(void) redrawShadow {
+    if (kDefaultShadowEnabled) {
+        UIBezierPath *path  =  [UIBezierPath bezierPathWithRoundedRect:[self bounds] cornerRadius:kDefaultCornerRadius];
+        
+        [self.layer setShadowOpacity: kDefaultShadowOpacity];
+        [self.layer setShadowOffset: kDefaultShadowOffset];
+        [self.layer setShadowRadius: kDefaultShadowRadius];
+        [self.layer setShadowColor: [kDefaultShadowColor CGColor]];
+        [self.layer setShadowPath: [path CGPath]];
     }
 }
 -(void) didPerformPanGesture:(UIPanGestureRecognizer*) recognizer {
@@ -404,5 +412,9 @@
 
 -(void) setYCoordinate:(CGFloat)yValue {
     [self setFrame:CGRectMake(self.frame.origin.x, yValue, self.frame.size.width, self.frame.size.height)];
+}
+-(void) setFrame:(CGRect)frame {
+    [super setFrame: frame];
+    [self redrawShadow];
 }
 @end
