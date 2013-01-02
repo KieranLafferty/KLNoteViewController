@@ -42,7 +42,6 @@
 
 @implementation KLNoteViewController
 
-
 - (void)viewDidLoad
 {
     
