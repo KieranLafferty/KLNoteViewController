@@ -229,8 +229,7 @@
         [self setAutoresizesSubviews:YES];
         [self setAutoresizingMask: UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth];
         [self addSubview: navigationController.view];
-        
-    
+            
         //Configure navigation controller to have rounded edges while maintaining shadow
         [self.navigationController.view.layer setCornerRadius: kDefaultCornerRadius];
         [self.navigationController.view setClipsToBounds:YES];
@@ -294,7 +293,6 @@
         if (translation.y > 0){
             //Panning downwards from Full screen state
             if (self.state == KLControllerCardStateFullScreen && self.frame.origin.y < originY) {
-                
                 //Notify delegate so it can update the coordinates of the other cards unless user has travelled past the origin y coordinate
                 if ([self.delegate respondsToSelector:@selector(controllerCard:didUpdatePanPercentage:)]) {
                     [self.delegate controllerCard:self didUpdatePanPercentage: [self percentageDistanceTravelled]];
@@ -314,12 +312,13 @@
     }
     else if (recognizer.state == UIGestureRecognizerStateEnded) {
         //Check if it should return to the origin location
-        if ([self shouldReturnToOrigin:[recognizer translationInView:self]]) {
-            [self setState:KLControllerCardStateDefault animated:YES];
+        if ([self shouldReturnToState: self.state fromPoint: [recognizer translationInView:self]]) {
+            [self setState: self.state animated:YES];
         }
         else {
-            //Go to full size
-            [self setState:KLControllerCardStateFullScreen animated:YES];
+            //Toggle state between full screen and default if it doesnt return to the current state
+            [self setState: self.state == KLControllerCardStateFullScreen? KLControllerCardStateDefault : KLControllerCardStateFullScreen
+                  animated:YES];
         }
     }
 }
@@ -415,8 +414,15 @@
 }
 
 //Boolean for determining if the movement was sufficient to warrent changing states
--(BOOL) shouldReturnToOrigin:(CGPoint) point {
-    return point.y > -self.navigationController.navigationBar.frame.size.height;
+-(BOOL) shouldReturnToState:(KLControllerCardState) state fromPoint:(CGPoint) point {
+    if (state == KLControllerCardStateFullScreen) {
+        return ABS(point.y) < self.navigationController.navigationBar.frame.size.height;
+    }
+    else if (state == KLControllerCardStateDefault){
+        return point.y > -self.navigationController.navigationBar.frame.size.height;
+    }
+    
+    return NO;
 }
 
 -(void) setYCoordinate:(CGFloat)yValue {
