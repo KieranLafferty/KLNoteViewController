@@ -93,6 +93,9 @@
         //Add the top view controller as a child view controller
         [self addChildViewController: navCont];
         
+        //As child controller will call the delegate methods for UIViewController
+        [navCont didMoveToParentViewController: self];
+        
         //Add as child view controllers
     }
     
@@ -117,7 +120,6 @@
     for (KLControllerCard* navigationContainer in self.controllerCards) {
         [navigationContainer.navigationController willMoveToParentViewController:nil];  // 1
         [navigationContainer removeFromSuperview];            // 2
-        [navigationContainer.navigationController removeFromParentViewController];      // 3 
     }
 }
 
@@ -236,13 +238,7 @@
         [self setAutoresizesSubviews:YES];
         [self setAutoresizingMask: UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth];
         
-        //As child controller will call the delegate methods for UIViewController
-        [self.navigationController willMoveToParentViewController: self.noteViewController];
-        
         [self addSubview: navigationController.view];
-        
-        //As child controller will call the delegate methods for UIViewController
-        [self.navigationController didMoveToParentViewController: self.noteViewController];
         
         //Configure navigation controller to have rounded edges while maintaining shadow
         [self.navigationController.view.layer setCornerRadius: kDefaultCornerRadius];
