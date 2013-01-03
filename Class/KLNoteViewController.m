@@ -89,6 +89,11 @@
                                                                                                    index:count];
         [noteContainer setDelegate: self];
         [navigationControllers addObject: noteContainer];
+        
+        //Add the top view controller as a child view controller
+        [self addChildViewController: navCont];
+        
+        //Add as child view controllers
     }
     
     self.controllerCards = [NSArray arrayWithArray:navigationControllers];
@@ -110,7 +115,9 @@
 
 -(void) removeNavigationContainersFromSuperView {
     for (KLControllerCard* navigationContainer in self.controllerCards) {
-        [navigationContainer removeFromSuperview];
+        [navigationContainer.navigationController willMoveToParentViewController:nil];  // 1
+        [navigationContainer removeFromSuperview];            // 2
+        [navigationContainer.navigationController removeFromParentViewController];      // 3
     }
 }
 
@@ -228,12 +235,18 @@
         //Initialize the view's properties
         [self setAutoresizesSubviews:YES];
         [self setAutoresizingMask: UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth];
+        
+        //As child controller will call the delegate methods for UIViewController
+        [self.navigationController willMoveToParentViewController: self.noteViewController];
+        
         [self addSubview: navigationController.view];
-            
+        
+        //As child controller will call the delegate methods for UIViewController
+        [self.navigationController didMoveToParentViewController: self.noteViewController];
+        
         //Configure navigation controller to have rounded edges while maintaining shadow
         [self.navigationController.view.layer setCornerRadius: kDefaultCornerRadius];
         [self.navigationController.view setClipsToBounds:YES];
-        
         //Add Pan Gesture
         UIPanGestureRecognizer* panGesture = [[UIPanGestureRecognizer alloc] initWithTarget:self
                                                                                      action:@selector(didPerformPanGesture:)];        
