@@ -117,7 +117,7 @@
     for (KLControllerCard* navigationContainer in self.controllerCards) {
         [navigationContainer.navigationController willMoveToParentViewController:nil];  // 1
         [navigationContainer removeFromSuperview];            // 2
-        [navigationContainer.navigationController removeFromParentViewController];      // 3
+        [navigationContainer.navigationController removeFromParentViewController];      // 3 
     }
 }
 
