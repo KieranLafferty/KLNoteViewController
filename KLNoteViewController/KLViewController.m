@@ -7,6 +7,7 @@
 //
 
 #import "KLViewController.h"
+#import "KLCustomViewController.h"
 @interface KLViewController ()
 
 @end
@@ -23,7 +24,7 @@
     NSString* plistPath = [[NSBundle mainBundle] pathForResource: @"NavigationControllerData"
                                                           ofType: @"plist"];
     // Build the array from the plist
-    self.navigationControllers = [[NSArray alloc] initWithContentsOfFile:plistPath];
+    self.viewControllerData = [[NSArray alloc] initWithContentsOfFile:plistPath];
     
     [super viewDidLoad];
 
@@ -35,28 +36,20 @@
     // Dispose of any resources that can be recreated.
 }
 - (NSInteger)numberOfControllerCardsInNoteView:(KLNoteViewController*) noteView {
-    return  [self.navigationControllers count];
+    return  [self.viewControllerData count];
 }
-- (UINavigationController *)noteView:(KLNoteViewController*)noteView controllerCardForRowAtIndexPath:(NSIndexPath *)indexPath {
+- (UIViewController *)noteView:(KLNoteViewController*)noteView viewControllerForRowAtIndexPath:(NSIndexPath *)indexPath {
     //Get the relevant data for the navigation controller
-    NSDictionary* navDict = [self.navigationControllers objectAtIndex: indexPath.row];
+    NSDictionary* navDict = [self.viewControllerData objectAtIndex: indexPath.row];
     
     //Initialize a blank uiviewcontroller for display purposes
-    UIViewController* viewController = [[UIViewController alloc] init];
-    [viewController.view setBackgroundColor: [UIColor colorWithRed: 225/255.0
-                                                             green: 225/255.0
-                                                              blue: 225/255.0
-                                                             alpha: 1.0]];
-    [viewController setTitle: [navDict objectForKey:@"title"]];
+    UIStoryboard *st = [UIStoryboard storyboardWithName:[[NSBundle mainBundle].infoDictionary objectForKey:@"UIMainStoryboardFile"] bundle:[NSBundle mainBundle]];
     
-    
-    //Initialize the nav controller with the view controller
-    UINavigationController* navController = [[UINavigationController alloc] initWithRootViewController: viewController];
-    [navController.navigationBar setBackgroundImage: [UIImage imageNamed:[navDict objectForKey:@"image"]]
-                                      forBarMetrics: UIBarMetricsDefault];
+    KLCustomViewController* viewController = [st instantiateViewControllerWithIdentifier:@"RootViewController"];
+    [viewController setInfo: navDict];
 
-    //Return a blank navigationcontroller
-    return navController;
+    //Return the custom view controller
+    return viewController;
 }
 
 @end

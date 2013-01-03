@@ -31,28 +31,20 @@ OR, Import the header file and declare your controller to conform to KLNoteViewC
 Implement the required methods of the data source 
 
 	- (NSInteger)numberOfControllerCardsInNoteView:(KLNoteViewController*) noteView {
-	    return  [self.navigationControllers count];
+	    return  [self.viewControllers count];
 	}
-	- (UINavigationController *)noteView:(KLNoteViewController*)noteView controllerCardForRowAtIndexPath:(NSIndexPath *)indexPath {
+	- (UIViewController *)noteView:(KLNoteViewController*)noteView viewControllerForRowAtIndexPath:(NSIndexPath *)indexPath {
 	    //Get the relevant data for the navigation controller
 	    NSDictionary* navDict = [self.navigationControllers objectAtIndex: indexPath.row];
-    
-	    //Initialize a blank uiviewcontroller for display purposes
-	    UIViewController* viewController = [[UIViewController alloc] init];
-	    [viewController.view setBackgroundColor: [UIColor colorWithRed: 225/255.0
-	                                                             green: 225/255.0
-	                                                              blue: 225/255.0
-	                                                             alpha: 1.0]];
-	    [viewController setTitle: [navDict objectForKey:@"title"]];
-    
-    
-	    //Initialize the nav controller with the view controller
-	    UINavigationController* navController = [[UINavigationController alloc] initWithRootViewController: viewController];
-	    [navController.navigationBar setBackgroundImage: [UIImage imageNamed:[navDict objectForKey:@"image"]]
-	                                      forBarMetrics: UIBarMetricsDefault];
 
-	    //Return a blank navigationcontroller
-	    return navController;
+	    //Initialize a blank uiviewcontroller for display purposes
+	    UIStoryboard *st = [UIStoryboard storyboardWithName:[[NSBundle mainBundle].infoDictionary objectForKey:@"UIMainStoryboardFile"] bundle:[NSBundle mainBundle]];
+
+	    KLCustomViewController* viewController = [st instantiateViewControllerWithIdentifier:@"RootViewController"];
+	    [viewController setInfo: navDict];
+
+	    //Return the custom view controller
+	    return viewController;
 	}
 
 Implement the optional delegate method to be notified when a card changes state

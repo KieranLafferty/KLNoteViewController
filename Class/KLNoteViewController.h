@@ -64,7 +64,7 @@ typedef UInt32 KLControllerCardState;
 
 //Helpers for getting information about the controller cards
 - (NSInteger)numberOfControllerCardsInNoteView:(KLNoteViewController*) noteView;
-- (UINavigationController *)noteView:(KLNoteViewController*)noteView controllerCardForRowAtIndexPath:(NSIndexPath *)indexPath;
+- (UIViewController *)noteView:(KLNoteViewController*)noteView viewControllerForRowAtIndexPath:(NSIndexPath *)indexPath;
 - (NSIndexPath*) indexPathForControllerCard: (KLControllerCard*) controllerCard;
 @end
 @protocol   KLNoteViewControllerDelegate <NSObject>
@@ -77,5 +77,5 @@ typedef UInt32 KLControllerCardState;
 //Called when the NoteViewController needs to know how many controller cards to expect
 - (NSInteger)numberOfControllerCardsInNoteView:(KLNoteViewController*) noteView;
 //Called to populate the controllerCards array - Automatically maps the UINavigationController to KLControllerCard and adds to array
-- (UINavigationController *)noteView:(KLNoteViewController*)noteView controllerCardForRowAtIndexPath:(NSIndexPath *)indexPath;
+- (UIViewController *)noteView:(KLNoteViewController*)noteView viewControllerForRowAtIndexPath:(NSIndexPath *)indexPath;
 @end

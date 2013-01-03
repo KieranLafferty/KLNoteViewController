@@ -34,6 +34,7 @@
 		7797ED4D168F8E0A00CB59EA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7797ED25168F8E0A00CB59EA /* Foundation.framework */; };
 		7797ED55168F8E0A00CB59EA /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7797ED53168F8E0A00CB59EA /* InfoPlist.strings */; };
 		7797ED58168F8E0A00CB59EA /* KLNoteViewControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7797ED57168F8E0A00CB59EA /* KLNoteViewControllerTests.m */; };
+		77E2DD6C1695DBB500667FC4 /* KLCustomViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 77E2DD6B1695DBB500667FC4 /* KLCustomViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,6 +84,8 @@
 		7797ED54168F8E0A00CB59EA /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		7797ED56168F8E0A00CB59EA /* KLNoteViewControllerTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KLNoteViewControllerTests.h; sourceTree = "<group>"; };
 		7797ED57168F8E0A00CB59EA /* KLNoteViewControllerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KLNoteViewControllerTests.m; sourceTree = "<group>"; };
+		77E2DD6A1695DBB500667FC4 /* KLCustomViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KLCustomViewController.h; sourceTree = "<group>"; };
+		77E2DD6B1695DBB500667FC4 /* KLCustomViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KLCustomViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,12 +112,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		7740B0961693975600449E10 /* Class */ = {
+		7740B0961693975600449E10 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
 				7740B0B0169397A800449E10 /* KLNoteViewController.h */,
 				7740B0B1169397A800449E10 /* KLNoteViewController.m */,
 			);
+			name = Classes;
 			path = Class;
 			sourceTree = "<group>";
 		};
@@ -169,13 +173,11 @@
 			isa = PBXGroup;
 			children = (
 				7740B09A1693976500449E10 /* Images */,
-				7740B0961693975600449E10 /* Class */,
-				7797ED32168F8E0A00CB59EA /* KLAppDelegate.h */,
-				7797ED33168F8E0A00CB59EA /* KLAppDelegate.m */,
+				7740B0961693975600449E10 /* Classes */,
+				77E2DD691695DB9A00667FC4 /* Delegate */,
 				7797ED3B168F8E0A00CB59EA /* MainStoryboard_iPhone.storyboard */,
 				7797ED3E168F8E0A00CB59EA /* MainStoryboard_iPad.storyboard */,
-				7797ED41168F8E0A00CB59EA /* KLViewController.h */,
-				7797ED42168F8E0A00CB59EA /* KLViewController.m */,
+				77E2DD6D1695DBBA00667FC4 /* View Controllers */,
 				7797ED2A168F8E0A00CB59EA /* Supporting Files */,
 				7740B086169248D200449E10 /* NavigationControllerData.plist */,
 			);
@@ -213,6 +215,26 @@
 				7797ED53168F8E0A00CB59EA /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		77E2DD691695DB9A00667FC4 /* Delegate */ = {
+			isa = PBXGroup;
+			children = (
+				7797ED32168F8E0A00CB59EA /* KLAppDelegate.h */,
+				7797ED33168F8E0A00CB59EA /* KLAppDelegate.m */,
+			);
+			name = Delegate;
+			sourceTree = "<group>";
+		};
+		77E2DD6D1695DBBA00667FC4 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				7797ED41168F8E0A00CB59EA /* KLViewController.h */,
+				7797ED42168F8E0A00CB59EA /* KLViewController.m */,
+				77E2DD6A1695DBB500667FC4 /* KLCustomViewController.h */,
+				77E2DD6B1695DBB500667FC4 /* KLCustomViewController.m */,
+			);
+			name = "View Controllers";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -339,6 +361,7 @@
 				7797ED30168F8E0A00CB59EA /* main.m in Sources */,
 				7797ED34168F8E0A00CB59EA /* KLAppDelegate.m in Sources */,
 				7797ED43168F8E0A00CB59EA /* KLViewController.m in Sources */,
+				77E2DD6C1695DBB500667FC4 /* KLCustomViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

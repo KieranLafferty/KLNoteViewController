@@ -82,19 +82,21 @@
     //For each expected controller grab from the instantiating class and populate into local controller stack
     NSMutableArray* navigationControllers = [[NSMutableArray alloc] initWithCapacity: totalCards];
     for (NSInteger count = 0; count < totalCards; count++) {
-        UINavigationController* navCont = [self noteView:self
-                   controllerCardForRowAtIndexPath:[NSIndexPath indexPathForRow:count inSection:0]];
+        UIViewController* viewController = [self noteView:self viewControllerForRowAtIndexPath:[NSIndexPath indexPathForRow:count inSection:0]];
+        
+        UINavigationController* navigationController = [[UINavigationController alloc] initWithRootViewController:viewController];
+        
         KLControllerCard* noteContainer = [[KLControllerCard alloc] initWithNoteViewController: self
-                                                                                    navigationController: navCont
+                                                                                    navigationController: navigationController
                                                                                                    index:count];
         [noteContainer setDelegate: self];
         [navigationControllers addObject: noteContainer];
         
         //Add the top view controller as a child view controller
-        [self addChildViewController: navCont];
+        [self addChildViewController: navigationController];
         
         //As child controller will call the delegate methods for UIViewController
-        [navCont didMoveToParentViewController: self];
+        [navigationController didMoveToParentViewController: self];
         
         //Add as child view controllers
     }
@@ -158,8 +160,8 @@
     return  [self.dataSource numberOfControllerCardsInNoteView:self];
 }
 
-- (UINavigationController *)noteView:(KLNoteViewController*)noteView controllerCardForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return [self noteView:noteView controllerCardForRowAtIndexPath:indexPath];
+- (UIViewController *)noteView:(KLNoteViewController*)noteView viewControllerForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return [self.dataSource noteView:noteView viewControllerForRowAtIndexPath:indexPath];
 }
 
 #pragma mark - Delegate implementation for KLControllerCard

@@ -10,5 +10,5 @@
 #import "KLNoteViewController.h"
 
 @interface KLViewController : KLNoteViewController
-@property (nonatomic, strong) NSArray* navigationControllers;
+@property (nonatomic, strong) NSArray* viewControllerData;
 @end
