@@ -29,6 +29,10 @@ OR, Import the header file and declare your controller to conform to KLNoteViewC
 	@property(nonatomic, strong) KLNoteViewController* noteViewController;
 
 Implement the required methods of the data source 
+	- (NSInteger)numberOfControllerCardsInNoteView:(KLNoteViewController*) noteView;
+	- (UIViewController *)noteView:(KLNoteViewController*)noteView viewControllerForRowAtIndexPath:(NSIndexPath *)indexPath;
+
+Example - Should be changed to suit your needs
 
 	- (NSInteger)numberOfControllerCardsInNoteView:(KLNoteViewController*) noteView {
 	    return  [self.viewControllers count];
