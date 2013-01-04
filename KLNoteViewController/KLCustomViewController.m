@@ -13,6 +13,7 @@
     [super viewDidLoad];
     [self.navigationController.navigationBar setBackgroundImage: [UIImage imageNamed:[self.info objectForKey:@"image"]]
                                                   forBarMetrics: UIBarMetricsDefault];
+	[self.navigationItem setTitle:[self.info objectForKey:@"title"]];
 }
 
 @end
