@@ -19,24 +19,24 @@
 
 //Position for the stack of navigation controllers to originate at
 #define kDefaultVerticalOrigin 100              //Vertical origin of the controller card stack. Making this value larger/smaller will make the card shift down/up.
-#define kDefaultNavigationControllerToolbarHeight 44 //TODO: remove dependancy on this and get directly from the navigationcontroller itself
+
+//Corner radius properties
+#define kDefaultCornerRadius 5.0
 
 //Shadow Properties - Note : Disabling shadows greatly improves performance and fluidity of animations
 #define kDefaultShadowEnabled YES
 #define kDefaultShadowColor [UIColor blackColor]
 #define kDefaultShadowOffset CGSizeMake(0, -5)
-#define kDefaultShadowRadius 7.0
+#define kDefaultShadowRadius kDefaultCornerRadius
 #define kDefaultShadowOpacity 0.60
-
-//Corner radius properties
-#define kDefaultCornerRadius 5.0
 
 //Gesture properties
 #define kDefaultMinimumPressDuration 0.2
 
 @interface KLNoteViewController ()
 //Drawing information for the navigation controllers
-- (CGFloat) defaultVerticalOriginForIndex: (NSInteger) index;
+- (CGFloat) defaultVerticalOriginForControllerCard: (KLControllerCard*) controllerCard atIndex:(NSInteger) index;
+
 - (CGFloat) scalingFactorForIndex: (NSInteger) index;
 @end
 
@@ -53,17 +53,17 @@
 	// Do any additional setup after loading the view.
     [self reloadInputViews];
     
-    
 }
 
 #pragma Drawing Methods - Used to position and present the navigation controllers on screen
 
-- (CGFloat) defaultVerticalOriginForIndex: (NSInteger) index {
+- (CGFloat) defaultVerticalOriginForControllerCard: (KLControllerCard*) controllerCard atIndex:(NSInteger) index {
     //Sum up the shrunken size of each of the cards appearing before the current index
     CGFloat originOffset = 0;
     for (int i = 0; i < index; i ++) {
         CGFloat scalingFactor = [self scalingFactorForIndex: i];
-        originOffset += scalingFactor * kDefaultNavigationControllerToolbarHeight * kDefaultNavigationBarOverlap;
+        NSLog(@"%@", controllerCard.navigationController.navigationBar);
+        originOffset += scalingFactor * controllerCard.navigationController.navigationBar.frame.size.height * kDefaultNavigationBarOverlap;
     }
     
     //Position should start at kDefaultVerticalOrigin and move down by size of nav toolbar for each additional nav controller
@@ -238,11 +238,14 @@
 @implementation KLControllerCard
 
 -(id) initWithNoteViewController: (KLNoteViewController*) noteView navigationController:(UINavigationController*) navigationController index:(NSInteger) _index {
-    //Set the instance variables
-    index = _index;
-    originY = [noteView defaultVerticalOriginForIndex: index];
     self.noteViewController = noteView;
     self.navigationController = navigationController;
+    
+    //Set the instance variables
+    index = _index;
+    originY = [noteView defaultVerticalOriginForControllerCard:self
+                                                       atIndex: index];
+
 
     if (self = [super initWithFrame: navigationController.view.bounds]) {
         //Initialize the view's properties
