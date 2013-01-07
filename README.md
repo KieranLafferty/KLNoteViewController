@@ -56,7 +56,7 @@ Example - Should be changed to suit your needs
 Implement the optional delegate method to be notified when a card changes state
 
 	//Called on any time a state change has occured - even if a state has changed to itself - (i.e. from KLControllerCardStateDefault to KLControllerCardStateDefault)
-	-(void) controllerCard:(KLControllerCard*)controllerCard didChangeToDisplayState:(KLControllerCardState) toState fromDisplayState:(KLControllerCardState) fromState;
+	-(void) noteViewController: (KLNoteViewController*) noteViewController didUpdateControllerCard:(KLControllerCard*)controllerCard toDisplayState:(KLControllerCardState) toState fromDisplayState:(KLControllerCardState) fromState;
 
 ## Config ##
 The visual appearance can be tweaked by changing the constants in <code>KLNoteViewController.m</code>:
