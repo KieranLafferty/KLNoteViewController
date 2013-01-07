@@ -71,17 +71,16 @@ The visual appearance can be tweaked by changing the constants in <code>KLNoteVi
 
 	//Position for the stack of navigation controllers to originate at
 	#define kDefaultVerticalOrigin 100              //Vertical origin of the controller card stack. Making this value larger/smaller will make the card shift down/up.
-	#define kDefaultNavigationControllerToolbarHeight 44 //TODO: remove dependancy on this and get directly from the navigationcontroller itself
+
+	//Corner radius properties
+	#define kDefaultCornerRadius 5.0
 
 	//Shadow Properties - Note : Disabling shadows greatly improves performance and fluidity of animations
 	#define kDefaultShadowEnabled YES
 	#define kDefaultShadowColor [UIColor blackColor]
 	#define kDefaultShadowOffset CGSizeMake(0, -5)
-	#define kDefaultShadowRadius 7.0
+	#define kDefaultShadowRadius kDefaultCornerRadius
 	#define kDefaultShadowOpacity 0.60
-
-	//Corner radius properties
-	#define kDefaultCornerRadius 5.0
 
 	//Gesture properties
 	#define kDefaultMinimumPressDuration 0.2
