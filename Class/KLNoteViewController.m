@@ -197,12 +197,21 @@
     }
     
     //Notify the delegate of the change
-    if ([self.delegate respondsToSelector:@selector(controllerCard:didChangeToDisplayState:fromDisplayState:)]) {
-        [self.delegate controllerCard:controllerCard
-              didChangeToDisplayState:toState fromDisplayState: fromState];
+    [self noteViewController:self
+     didUpdateControllerCard:controllerCard
+              toDisplayState:toState
+            fromDisplayState:fromState];
+    
+}
+-(void) noteViewController: (KLNoteViewController*) noteViewController didUpdateControllerCard:(KLControllerCard*)controllerCard toDisplayState:(KLControllerCardState) toState fromDisplayState:(KLControllerCardState) fromState {
+    if ([self.delegate respondsToSelector:@selector(noteViewController:didUpdateControllerCard:toDisplayState:fromDisplayState:)])
+    {
+        [self.delegate noteViewController:self
+                  didUpdateControllerCard:controllerCard
+                           toDisplayState:toState
+                         fromDisplayState:fromState];
     }
 }
-
 -(void) controllerCard:(KLControllerCard*)controllerCard didUpdatePanPercentage:(CGFloat) percentage {
     if (controllerCard.state == KLControllerCardStateFullScreen) {
         for (KLControllerCard* currentCard in [self controllerCardAboveCard: controllerCard]) {

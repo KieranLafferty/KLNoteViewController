@@ -66,11 +66,12 @@ typedef UInt32 KLControllerCardState;
 - (NSInteger)numberOfControllerCardsInNoteView:(KLNoteViewController*) noteView;
 - (UIViewController *)noteView:(KLNoteViewController*)noteView viewControllerForRowAtIndexPath:(NSIndexPath *)indexPath;
 - (NSIndexPath*) indexPathForControllerCard: (KLControllerCard*) controllerCard;
+-(void) noteViewController: (KLNoteViewController*) noteViewController didUpdateControllerCard:(KLControllerCard*)controllerCard toDisplayState:(KLControllerCardState) toState fromDisplayState:(KLControllerCardState) fromState;
 @end
 @protocol   KLNoteViewControllerDelegate <NSObject>
 @optional
 //Called on any time a state change has occured - even if a state has changed to itself - (i.e. from KLControllerCardStateDefault to KLControllerCardStateDefault)
--(void) controllerCard:(KLControllerCard*)controllerCard didChangeToDisplayState:(KLControllerCardState) toState fromDisplayState:(KLControllerCardState) fromState;
+-(void) noteViewController: (KLNoteViewController*) noteViewController didUpdateControllerCard:(KLControllerCard*)controllerCard toDisplayState:(KLControllerCardState) toState fromDisplayState:(KLControllerCardState) fromState;
 @end
 @protocol   KLNoteViewControllerDataSource <NSObject>
 @required

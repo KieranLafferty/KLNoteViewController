@@ -52,4 +52,13 @@
     return viewController;
 }
 
+-(void) noteViewController: (KLNoteViewController*) noteViewController didUpdateControllerCard:(KLControllerCard*)controllerCard toDisplayState:(KLControllerCardState) toState fromDisplayState:(KLControllerCardState) fromState {
+
+    
+    NSIndexPath* index = [noteViewController indexPathForControllerCard: controllerCard];
+    NSDictionary* navDict = [self.viewControllerData objectAtIndex: index.row];
+    
+    NSLog(@"%@ changed state %ld", [navDict objectForKey:@"title"], toState);
+    
+}
 @end
