@@ -250,7 +250,12 @@
     if (self = [super initWithFrame: navigationController.view.bounds]) {
         //Initialize the view's properties
         [self setAutoresizesSubviews:YES];
-        [self setAutoresizingMask: UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth];
+        [self setAutoresizingMask:     UIViewAutoresizingFlexibleBottomMargin |
+         UIViewAutoresizingFlexibleHeight |
+         UIViewAutoresizingFlexibleLeftMargin |
+         UIViewAutoresizingFlexibleRightMargin |
+         UIViewAutoresizingFlexibleTopMargin |
+         UIViewAutoresizingFlexibleWidth];
         
         [self addSubview: navigationController.view];
         
