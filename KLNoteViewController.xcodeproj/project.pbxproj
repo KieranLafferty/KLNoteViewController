@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7722194316A90E1900E7DDC4 /* KLNoteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7722194216A90E1900E7DDC4 /* KLNoteViewController.m */; };
+		7722194516A90E3100E7DDC4 /* KLNoteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7722194216A90E1900E7DDC4 /* KLNoteViewController.m */; };
 		7740B087169248D200449E10 /* NavigationControllerData.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7740B086169248D200449E10 /* NavigationControllerData.plist */; };
 		7740B0A51693976500449E10 /* background-dark-gray-tex.png in Resources */ = {isa = PBXBuildFile; fileRef = 7740B09B1693976500449E10 /* background-dark-gray-tex.png */; };
 		7740B0A61693976500449E10 /* background-dark-gray-tex@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7740B09C1693976500449E10 /* background-dark-gray-tex@2x.png */; };
@@ -18,8 +20,6 @@
 		7740B0AC1693976500449E10 /* iPhoneScreenshot.png in Resources */ = {isa = PBXBuildFile; fileRef = 7740B0A21693976500449E10 /* iPhoneScreenshot.png */; };
 		7740B0AD1693976500449E10 /* premium-header-mid-skinny.png in Resources */ = {isa = PBXBuildFile; fileRef = 7740B0A31693976500449E10 /* premium-header-mid-skinny.png */; };
 		7740B0AE1693976500449E10 /* premium-header-mid-skinny@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7740B0A41693976500449E10 /* premium-header-mid-skinny@2x.png */; };
-		7740B0B2169397A800449E10 /* KLNoteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7740B0B1169397A800449E10 /* KLNoteViewController.m */; };
-		7740B0B3169397AF00449E10 /* KLNoteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7740B0B1169397A800449E10 /* KLNoteViewController.m */; };
 		7797ED24168F8E0A00CB59EA /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7797ED23168F8E0A00CB59EA /* UIKit.framework */; };
 		7797ED26168F8E0A00CB59EA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7797ED25168F8E0A00CB59EA /* Foundation.framework */; };
 		7797ED28168F8E0A00CB59EA /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7797ED27168F8E0A00CB59EA /* CoreGraphics.framework */; };
@@ -48,6 +48,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7722194116A90E1900E7DDC4 /* KLNoteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KLNoteViewController.h; path = Classes/KLNoteViewController.h; sourceTree = SOURCE_ROOT; };
+		7722194216A90E1900E7DDC4 /* KLNoteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KLNoteViewController.m; path = Classes/KLNoteViewController.m; sourceTree = SOURCE_ROOT; };
 		7740B086169248D200449E10 /* NavigationControllerData.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = NavigationControllerData.plist; sourceTree = "<group>"; };
 		7740B09B1693976500449E10 /* background-dark-gray-tex.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "background-dark-gray-tex.png"; sourceTree = "<group>"; };
 		7740B09C1693976500449E10 /* background-dark-gray-tex@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "background-dark-gray-tex@2x.png"; sourceTree = "<group>"; };
@@ -59,8 +61,6 @@
 		7740B0A21693976500449E10 /* iPhoneScreenshot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iPhoneScreenshot.png; sourceTree = "<group>"; };
 		7740B0A31693976500449E10 /* premium-header-mid-skinny.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "premium-header-mid-skinny.png"; sourceTree = "<group>"; };
 		7740B0A41693976500449E10 /* premium-header-mid-skinny@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "premium-header-mid-skinny@2x.png"; sourceTree = "<group>"; };
-		7740B0B0169397A800449E10 /* KLNoteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KLNoteViewController.h; path = Class/KLNoteViewController.h; sourceTree = SOURCE_ROOT; };
-		7740B0B1169397A800449E10 /* KLNoteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KLNoteViewController.m; path = Class/KLNoteViewController.m; sourceTree = SOURCE_ROOT; };
 		7797ED1F168F8E0A00CB59EA /* KLNoteViewController.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KLNoteViewController.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7797ED23168F8E0A00CB59EA /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		7797ED25168F8E0A00CB59EA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -115,8 +115,8 @@
 		7740B0961693975600449E10 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				7740B0B0169397A800449E10 /* KLNoteViewController.h */,
-				7740B0B1169397A800449E10 /* KLNoteViewController.m */,
+				7722194116A90E1900E7DDC4 /* KLNoteViewController.h */,
+				7722194216A90E1900E7DDC4 /* KLNoteViewController.m */,
 			);
 			name = Classes;
 			path = Class;
@@ -357,7 +357,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7740B0B3169397AF00449E10 /* KLNoteViewController.m in Sources */,
+				7722194516A90E3100E7DDC4 /* KLNoteViewController.m in Sources */,
 				7797ED30168F8E0A00CB59EA /* main.m in Sources */,
 				7797ED34168F8E0A00CB59EA /* KLAppDelegate.m in Sources */,
 				7797ED43168F8E0A00CB59EA /* KLViewController.m in Sources */,
@@ -370,7 +370,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7797ED58168F8E0A00CB59EA /* KLNoteViewControllerTests.m in Sources */,
-				7740B0B2169397A800449E10 /* KLNoteViewController.m in Sources */,
+				7722194316A90E1900E7DDC4 /* KLNoteViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
