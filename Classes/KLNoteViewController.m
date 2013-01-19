@@ -16,6 +16,8 @@
 
 //Animation properties
 #define kDefaultAnimationDuration 0.3           //Amount of time for the animations to occur
+#define kDefaultReloadHideAnimationDuration 0.4
+#define kDefaultReloadShowAnimationDuration 0.6
 
 //Position for the stack of navigation controllers to originate at
 #define kDefaultVerticalOrigin 100              //Vertical origin of the controller card stack. Making this value larger/smaller will make the card shift down/up.
@@ -103,7 +105,29 @@
     
     self.controllerCards = [NSArray arrayWithArray:navigationControllers];
 }
-
+- (void) reloadDataAnimated:(BOOL) animated {
+    if (animated) {
+        [UIView animateWithDuration:kDefaultReloadHideAnimationDuration animations:^{
+            for (KLControllerCard* card in self.controllerCards) {
+                [card setState:KLControllerCardStateHiddenBottom animated:NO];
+            }
+        } completion:^(BOOL finished) {
+            [self reloadData];
+            [self reloadInputViews];
+            for (KLControllerCard* card in self.controllerCards) {
+                [card setState:KLControllerCardStateHiddenBottom animated:NO];
+            }
+            [UIView animateWithDuration:kDefaultReloadShowAnimationDuration animations:^{
+                for (KLControllerCard* card in self.controllerCards) {
+                    [card setState:KLControllerCardStateDefault animated:NO];
+                }
+            }];
+        }];
+    }
+    else   {
+        [self reloadData];
+    }
+}
 - (void) reloadInputViews {
     [super reloadInputViews];
     

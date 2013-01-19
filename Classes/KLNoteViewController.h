@@ -61,11 +61,12 @@ typedef UInt32 KLControllerCardState;
 
 //Repopulates all data for the controllerCards array
 -(void) reloadData;
+-(void) reloadDataAnimated:(BOOL) animated;
 
 //Helpers for getting information about the controller cards
-- (NSInteger)numberOfControllerCardsInNoteView:(KLNoteViewController*) noteView;
-- (UIViewController *)noteView:(KLNoteViewController*)noteView viewControllerForRowAtIndexPath:(NSIndexPath *)indexPath;
-- (NSIndexPath*) indexPathForControllerCard: (KLControllerCard*) controllerCard;
+-(NSInteger)numberOfControllerCardsInNoteView:(KLNoteViewController*) noteView;
+-(UIViewController *)noteView:(KLNoteViewController*)noteView viewControllerForRowAtIndexPath:(NSIndexPath *)indexPath;
+-(NSIndexPath*) indexPathForControllerCard: (KLControllerCard*) controllerCard;
 -(void) noteViewController: (KLNoteViewController*) noteViewController didUpdateControllerCard:(KLControllerCard*)controllerCard toDisplayState:(KLControllerCardState) toState fromDisplayState:(KLControllerCardState) fromState;
 @end
 @protocol   KLNoteViewControllerDelegate <NSObject>

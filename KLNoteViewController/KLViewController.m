@@ -61,4 +61,8 @@
     NSLog(@"%@ changed state %ld", [navDict objectForKey:@"title"], toState);
     
 }
+- (IBAction)reloadCardData:(id)sender {
+    [self reloadDataAnimated:YES];
+    
+}
 @end
