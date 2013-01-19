@@ -68,6 +68,8 @@ The visual appearance can be tweaked by changing the constants in <code>KLNoteVi
 
 	//Animation properties
 	#define kDefaultAnimationDuration 0.3           //Amount of time for the animations to occur
+	#define kDefaultReloadHideAnimationDuration 0.4
+	#define kDefaultReloadShowAnimationDuration 0.6
 
 	//Position for the stack of navigation controllers to originate at
 	#define kDefaultVerticalOrigin 100              //Vertical origin of the controller card stack. Making this value larger/smaller will make the card shift down/up.
