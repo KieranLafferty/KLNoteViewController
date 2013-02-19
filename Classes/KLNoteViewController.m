@@ -90,6 +90,13 @@
     self.cardShadowOpacity = kDefaultShadowOpacity;
     
     self.cardMinimumPressDuration = kDefaultMinimumPressDuration;
+    
+    self.cardAutoresizingMask = (UIViewAutoresizingFlexibleBottomMargin |
+                                 UIViewAutoresizingFlexibleHeight |
+                                 UIViewAutoresizingFlexibleLeftMargin |
+                                 UIViewAutoresizingFlexibleRightMargin |
+                                 UIViewAutoresizingFlexibleTopMargin |
+                                 UIViewAutoresizingFlexibleWidth);
 }
 
 - (void)viewDidLoad
@@ -322,12 +329,7 @@
     if (self = [super initWithFrame: navigationController.view.bounds]) {
         //Initialize the view's properties
         [self setAutoresizesSubviews:YES];
-        [self setAutoresizingMask:     UIViewAutoresizingFlexibleBottomMargin |
-         UIViewAutoresizingFlexibleHeight |
-         UIViewAutoresizingFlexibleLeftMargin |
-         UIViewAutoresizingFlexibleRightMargin |
-         UIViewAutoresizingFlexibleTopMargin |
-         UIViewAutoresizingFlexibleWidth];
+        [self setAutoresizingMask:self.noteViewController.cardAutoresizingMask];
         
         [self addSubview: navigationController.view];
         

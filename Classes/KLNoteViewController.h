@@ -82,6 +82,9 @@ typedef UInt32 KLControllerCardState;
 //Gesture properties
 @property (nonatomic) NSTimeInterval cardMinimumPressDuration;
 
+//Autoresizing mask used for the card controller
+@property (nonatomic) UIViewAutoresizing cardAutoresizingMask;
+
 //KLControllerCards in an array. Object at index 0 will appear at bottom of the stack, and object at position (size-1) will appear at the top
 @property (nonatomic, strong) NSArray* controllerCards;
 
