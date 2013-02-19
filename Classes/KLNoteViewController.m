@@ -36,6 +36,8 @@
 #define kDefaultMinimumPressDuration 0.2
 
 @interface KLNoteViewController ()
+- (void)configureDefaultSettings;
+
 //Drawing information for the navigation controllers
 - (CGFloat) defaultVerticalOriginForControllerCard: (KLControllerCard*) controllerCard atIndex:(NSInteger) index;
 
@@ -43,6 +45,52 @@
 @end
 
 @implementation KLNoteViewController
+
+- (id)initWithCoder:(NSCoder *)aDecoder
+{
+    self = [super initWithCoder:aDecoder];
+    if (!self) {
+        return nil;
+    }
+    
+    [self configureDefaultSettings];
+    
+    return self;
+}
+
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+{
+    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    if (!self) {
+        return nil;
+    }
+    
+    [self configureDefaultSettings];
+    
+    return self;
+}
+
+- (void)configureDefaultSettings {
+    self.cardMinimizedScalingFactor = kDefaultMinimizedScalingFactor;
+    self.cardMaximizedScalingFactor = kDefaultMaximizedScalingFactor;
+    self.cardNavigationBarOverlap = kDefaultNavigationBarOverlap;
+    
+    self.cardAnimationDuration = kDefaultAnimationDuration;
+    self.cardReloadHideAnimationDuration = kDefaultReloadHideAnimationDuration;
+    self.cardReloadShowAnimationDuration = kDefaultReloadShowAnimationDuration;
+    
+    self.cardVerticalOrigin = kDefaultVerticalOrigin;
+    
+    self.cardCornerRadius = kDefaultCornerRadius;
+    
+    self.cardShadowEnabled = kDefaultShadowEnabled;
+    self.cardShadowColor = kDefaultShadowColor;
+    self.cardShadowOffset = kDefaultShadowOffset;
+    self.cardShadowRadius = kDefaultShadowRadius;
+    self.cardShadowOpacity = kDefaultShadowOpacity;
+    
+    self.cardMinimumPressDuration = kDefaultMinimumPressDuration;
+}
 
 - (void)viewDidLoad
 {
@@ -65,16 +113,16 @@
     for (int i = 0; i < index; i ++) {
         CGFloat scalingFactor = [self scalingFactorForIndex: i];
         NSLog(@"%@", controllerCard.navigationController.navigationBar);
-        originOffset += scalingFactor * controllerCard.navigationController.navigationBar.frame.size.height * kDefaultNavigationBarOverlap;
+        originOffset += scalingFactor * controllerCard.navigationController.navigationBar.frame.size.height * self.cardNavigationBarOverlap;
     }
     
-    //Position should start at kDefaultVerticalOrigin and move down by size of nav toolbar for each additional nav controller
-    return kDefaultVerticalOrigin + originOffset;
+    //Position should start at self.cardVerticalOrigin and move down by size of nav toolbar for each additional nav controller
+    return self.cardVerticalOrigin + originOffset;
 }
 
 - (CGFloat) scalingFactorForIndex: (NSInteger) index {
     //Items should get progressively smaller based on their index in the navigation controller array
-    return  powf(kDefaultMinimizedScalingFactor, (totalCards - index));
+    return  powf(self.cardMinimizedScalingFactor, (totalCards - index));
 }
 
 - (void) reloadData {
@@ -107,7 +155,7 @@
 }
 - (void) reloadDataAnimated:(BOOL) animated {
     if (animated) {
-        [UIView animateWithDuration:kDefaultReloadHideAnimationDuration animations:^{
+        [UIView animateWithDuration:self.cardReloadHideAnimationDuration animations:^{
             for (KLControllerCard* card in self.controllerCards) {
                 [card setState:KLControllerCardStateHiddenBottom animated:NO];
             }
@@ -117,7 +165,7 @@
             for (KLControllerCard* card in self.controllerCards) {
                 [card setState:KLControllerCardStateHiddenBottom animated:NO];
             }
-            [UIView animateWithDuration:kDefaultReloadShowAnimationDuration animations:^{
+            [UIView animateWithDuration:self.cardReloadShowAnimationDuration animations:^{
                 for (KLControllerCard* card in self.controllerCards) {
                     [card setState:KLControllerCardStateDefault animated:NO];
                 }
@@ -284,7 +332,7 @@
         [self addSubview: navigationController.view];
         
         //Configure navigation controller to have rounded edges while maintaining shadow
-        [self.navigationController.view.layer setCornerRadius: kDefaultCornerRadius];
+        [self.navigationController.view.layer setCornerRadius: self.noteViewController.cardCornerRadius];
         [self.navigationController.view setClipsToBounds:YES];
         //Add Pan Gesture
         UIPanGestureRecognizer* panGesture = [[UIPanGestureRecognizer alloc] initWithTarget:self
@@ -292,7 +340,7 @@
         //Add touch recognizer
         UILongPressGestureRecognizer* pressGesture = [[UILongPressGestureRecognizer alloc] initWithTarget:self
                                                                                              action:@selector(didPerformLongPress:)];
-        [pressGesture setMinimumPressDuration: kDefaultMinimumPressDuration];
+        [pressGesture setMinimumPressDuration: self.noteViewController.cardMinimumPressDuration];
 
         //Add the gestures to the navigationcontrollers navigation bar
         [self.navigationController.navigationBar addGestureRecognizer: panGesture];
@@ -316,13 +364,13 @@
 }
 
 -(void) redrawShadow {
-    if (kDefaultShadowEnabled) {
-        UIBezierPath *path  =  [UIBezierPath bezierPathWithRoundedRect:[self bounds] cornerRadius:kDefaultCornerRadius];
+    if (self.noteViewController.cardShadowEnabled) {
+        UIBezierPath *path  =  [UIBezierPath bezierPathWithRoundedRect:[self bounds] cornerRadius:self.noteViewController.cardCornerRadius];
         
-        [self.layer setShadowOpacity: kDefaultShadowOpacity];
-        [self.layer setShadowOffset: kDefaultShadowOffset];
-        [self.layer setShadowRadius: kDefaultShadowRadius];
-        [self.layer setShadowColor: [kDefaultShadowColor CGColor]];
+        [self.layer setShadowOpacity: self.noteViewController.cardShadowOpacity];
+        [self.layer setShadowOffset: self.noteViewController.cardShadowOffset];
+        [self.layer setShadowRadius: self.noteViewController.cardShadowRadius];
+        [self.layer setShadowColor: [self.noteViewController.cardShadowColor CGColor]];
         [self.layer setShadowPath: [path CGPath]];
     }
 }
@@ -385,7 +433,7 @@
     }
     //If animated then animate the shrinking else no animation
     if (animated) {
-        [UIView animateWithDuration:kDefaultAnimationDuration
+        [UIView animateWithDuration:self.noteViewController.cardAnimationDuration
                          animations:^{
                              //Slightly recursive to reduce duplicate code
                              [self shrinkCardToScaledSize:NO];
@@ -404,14 +452,14 @@
     }
     //If animated then animate the shrinking else no animation
     if (animated) {
-        [UIView animateWithDuration:kDefaultAnimationDuration
+        [UIView animateWithDuration:self.noteViewController.cardAnimationDuration
                          animations:^{
                              //Slightly recursive to reduce duplicate code
                              [self expandCardToFullSize:NO];
                          }];
     }
     else {
-        [self setTransform: CGAffineTransformMakeScale(kDefaultMaximizedScalingFactor, kDefaultMaximizedScalingFactor)];
+        [self setTransform: CGAffineTransformMakeScale(self.noteViewController.cardMaximizedScalingFactor, self.noteViewController.cardMaximizedScalingFactor)];
     }
 }
 
@@ -419,7 +467,7 @@
 
 - (void) setState:(KLControllerCardState)state animated:(BOOL) animated{
     if (animated) {
-        [UIView animateWithDuration:kDefaultAnimationDuration animations:^{
+        [UIView animateWithDuration:self.noteViewController.cardAnimationDuration animations:^{
             [self setState:state animated:NO];
         }];
         return;
@@ -437,7 +485,7 @@
     //Hidden State - Bottom
     else if (state == KLControllerCardStateHiddenBottom) {
         //Move it off screen and far enough down that the shadow does not appear on screen
-        [self setYCoordinate: self.noteViewController.view.frame.size.height + abs(kDefaultShadowOffset.height)*3];
+        [self setYCoordinate: self.noteViewController.view.frame.size.height + abs(self.noteViewController.cardShadowOffset.height)*3];
     }
     //Hidden State - Top
     else if (state == KLControllerCardStateHiddenTop) {
