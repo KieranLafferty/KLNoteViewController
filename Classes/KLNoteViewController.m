@@ -89,6 +89,7 @@
     self.cardShadowRadius = kDefaultShadowRadius;
     self.cardShadowOpacity = kDefaultShadowOpacity;
     
+    self.cardEnablePressGesture = YES;
     self.cardMinimumPressDuration = kDefaultMinimumPressDuration;
     
     self.cardAutoresizingMask = (UIViewAutoresizingFlexibleBottomMargin |
@@ -338,15 +339,18 @@
         [self.navigationController.view setClipsToBounds:YES];
         //Add Pan Gesture
         UIPanGestureRecognizer* panGesture = [[UIPanGestureRecognizer alloc] initWithTarget:self
-                                                                                     action:@selector(didPerformPanGesture:)];        
-        //Add touch recognizer
-        UILongPressGestureRecognizer* pressGesture = [[UILongPressGestureRecognizer alloc] initWithTarget:self
-                                                                                             action:@selector(didPerformLongPress:)];
-        [pressGesture setMinimumPressDuration: self.noteViewController.cardMinimumPressDuration];
-
-        //Add the gestures to the navigationcontrollers navigation bar
+                                                                                     action:@selector(didPerformPanGesture:)];
+        //Add the gesture to the navigation bar
         [self.navigationController.navigationBar addGestureRecognizer: panGesture];
-        [self.navigationController.navigationBar addGestureRecognizer:pressGesture];
+        
+        //Add long touch recognizer
+        if (self.noteViewController.cardEnablePressGesture) {
+            UILongPressGestureRecognizer* pressGesture = [[UILongPressGestureRecognizer alloc] initWithTarget:self
+                                                                                                 action:@selector(didPerformLongPress:)];
+            [pressGesture setMinimumPressDuration: self.noteViewController.cardMinimumPressDuration];
+            //Add the gesture to the navigation bar
+            [self.navigationController.navigationBar addGestureRecognizer:pressGesture];
+        }
         
         //Initialize the state to default
         [self setState:KLControllerCardStateDefault

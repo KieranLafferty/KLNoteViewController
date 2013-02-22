@@ -80,6 +80,7 @@ typedef UInt32 KLControllerCardState;
 @property (nonatomic) CGFloat cardShadowOpacity;
 
 //Gesture properties
+@property (nonatomic) BOOL cardEnablePressGesture;
 @property (nonatomic) NSTimeInterval cardMinimumPressDuration;
 
 //Autoresizing mask used for the card controller
