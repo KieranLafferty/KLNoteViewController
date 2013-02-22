@@ -89,6 +89,7 @@
     self.cardShadowRadius = kDefaultShadowRadius;
     self.cardShadowOpacity = kDefaultShadowOpacity;
     
+    self.cardPanGestureScope = KLControllerCardPanGestureScopeNavigationBar;
     self.cardEnablePressGesture = YES;
     self.cardMinimumPressDuration = kDefaultMinimumPressDuration;
     
@@ -341,7 +342,11 @@
         UIPanGestureRecognizer* panGesture = [[UIPanGestureRecognizer alloc] initWithTarget:self
                                                                                      action:@selector(didPerformPanGesture:)];
         //Add the gesture to the navigation bar
-        [self.navigationController.navigationBar addGestureRecognizer: panGesture];
+        if (self.noteViewController.cardPanGestureScope == KLControllerCardPanGestureScopeNavigationControllerView) {
+            [self.navigationController.view addGestureRecognizer: panGesture];
+        } else {
+            [self.navigationController.navigationBar addGestureRecognizer: panGesture];
+        }
         
         //Add long touch recognizer
         if (self.noteViewController.cardEnablePressGesture) {

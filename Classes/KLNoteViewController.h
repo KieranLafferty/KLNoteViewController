@@ -20,6 +20,12 @@ enum {
 };
 typedef UInt32 KLControllerCardState;
 
+enum {
+    KLControllerCardPanGestureScopeNavigationBar,               // the pan gesture only works from the navigation bar
+    KLControllerCardPanGestureScopeNavigationControllerView     // the pan gesture works on the whole card view
+};
+typedef UInt32 KLControllerCardPanGestureScope;
+
 @protocol KLControllerCardDelegate <NSObject>
 @optional
 //Called on any time a state change has occured - even if a state has changed to itself - (i.e. from KLControllerCardStateDefault to KLControllerCardStateDefault)
@@ -80,6 +86,7 @@ typedef UInt32 KLControllerCardState;
 @property (nonatomic) CGFloat cardShadowOpacity;
 
 //Gesture properties
+@property (nonatomic) KLControllerCardPanGestureScope cardPanGestureScope;
 @property (nonatomic) BOOL cardEnablePressGesture;
 @property (nonatomic) NSTimeInterval cardMinimumPressDuration;
 
