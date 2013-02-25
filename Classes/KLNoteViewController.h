@@ -20,6 +20,12 @@ enum {
 };
 typedef UInt32 KLControllerCardState;
 
+enum {
+    KLControllerCardPanGestureScopeNavigationBar,               // the pan gesture only works from the navigation bar
+    KLControllerCardPanGestureScopeNavigationControllerView     // the pan gesture works on the whole card view
+};
+typedef UInt32 KLControllerCardPanGestureScope;
+
 @protocol KLControllerCardDelegate <NSObject>
 @optional
 //Called on any time a state change has occured - even if a state has changed to itself - (i.e. from KLControllerCardStateDefault to KLControllerCardStateDefault)
@@ -55,6 +61,37 @@ typedef UInt32 KLControllerCardState;
 }
 @property (nonatomic, assign) id<KLNoteViewControllerDataSource> dataSource;
 @property (nonatomic, assign) id<KLNoteViewControllerDelegate> delegate;
+
+//Layout properties
+@property (nonatomic) CGFloat cardMinimizedScalingFactor;   //Amount to shrink each card from the previous one
+@property (nonatomic) CGFloat cardMaximizedScalingFactor;   //Maximum a card can be scaled to
+@property (nonatomic) CGFloat cardNavigationBarOverlap;     //Defines vertical overlap of each navigation toolbar. Slight hack that prevents rounding errors from showing the whitespace between navigation toolbars. Can be customized if require more/less packing of navigation toolbars
+
+//Animation properties
+@property (nonatomic) NSTimeInterval cardAnimationDuration;             //Amount of time for the animations to occur
+@property (nonatomic) NSTimeInterval cardReloadHideAnimationDuration;
+@property (nonatomic) NSTimeInterval cardReloadShowAnimationDuration;   
+
+//Position for the stack of navigation controllers to originate at
+@property (nonatomic) CGFloat cardVerticalOrigin;           //Vertical origin of the controller card stack. Making this value larger/smaller will make the card shift down/up.
+
+//Corner radius properties
+@property (nonatomic) CGFloat cardCornerRadius;
+
+//Shadow Properties - Note : Disabling shadows greatly improves performance and fluidity of animations
+@property (nonatomic) BOOL cardShadowEnabled;
+@property (nonatomic) UIColor* cardShadowColor;
+@property (nonatomic) CGSize cardShadowOffset;
+@property (nonatomic) CGFloat cardShadowRadius;
+@property (nonatomic) CGFloat cardShadowOpacity;
+
+//Gesture properties
+@property (nonatomic) KLControllerCardPanGestureScope cardPanGestureScope;
+@property (nonatomic) BOOL cardEnablePressGesture;
+@property (nonatomic) NSTimeInterval cardMinimumPressDuration;
+
+//Autoresizing mask used for the card controller
+@property (nonatomic) UIViewAutoresizing cardAutoresizingMask;
 
 //KLControllerCards in an array. Object at index 0 will appear at bottom of the stack, and object at position (size-1) will appear at the top
 @property (nonatomic, strong) NSArray* controllerCards;
