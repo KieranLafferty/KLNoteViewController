@@ -319,16 +319,17 @@
 @implementation KLControllerCard
 
 -(id) initWithNoteViewController: (KLNoteViewController*) noteView navigationController:(UINavigationController*) navigationController index:(NSInteger) _index {
-    self.noteViewController = noteView;
-    self.navigationController = navigationController;
     
-    //Set the instance variables
-    index = _index;
-    originY = [noteView defaultVerticalOriginForControllerCard:self
-                                                       atIndex: index];
+    if (self = [super init]) {
+        self.noteViewController = noteView;
+        self.navigationController = navigationController;
+        
+        //Set the instance variables
+        index = _index;
+        originY = [noteView defaultVerticalOriginForControllerCard:self
+                                                           atIndex: index];
+        [self setFrame: self.navigationController.view.bounds];
 
-
-    if (self = [super initWithFrame: navigationController.view.bounds]) {
         //Initialize the view's properties
         [self setAutoresizesSubviews:YES];
         [self setAutoresizingMask:self.noteViewController.cardAutoresizingMask];
