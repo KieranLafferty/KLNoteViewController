@@ -71,6 +71,8 @@
 }
 
 - (void)configureDefaultSettings {
+    self.cardNavigationBarClass = [UINavigationBar class];
+    
     self.cardMinimizedScalingFactor = kDefaultMinimizedScalingFactor;
     self.cardMaximizedScalingFactor = kDefaultMaximizedScalingFactor;
     self.cardNavigationBarOverlap = kDefaultNavigationBarOverlap;
@@ -143,7 +145,9 @@
     for (NSInteger count = 0; count < totalCards; count++) {
         UIViewController* viewController = [self noteView:self viewControllerForRowAtIndexPath:[NSIndexPath indexPathForRow:count inSection:0]];
         
-        UINavigationController* navigationController = [[UINavigationController alloc] initWithRootViewController:viewController];
+        UINavigationController* navigationController = [[UINavigationController alloc] initWithNavigationBarClass:self.cardNavigationBarClass
+                                                                                                     toolbarClass:[UIToolbar class]];
+        [navigationController pushViewController:viewController animated:NO];
         
         KLControllerCard* noteContainer = [[KLControllerCard alloc] initWithNoteViewController: self
                                                                                     navigationController: navigationController
