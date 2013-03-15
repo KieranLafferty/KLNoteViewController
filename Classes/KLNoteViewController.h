@@ -36,7 +36,7 @@ typedef UInt32 KLControllerCardPanGestureScope;
 @end
 
 //KLController card encapsulates the UINavigationController handling all the resizing and state management for the view. It has no concept of the other cards or world outside of itself.
-@interface KLControllerCard : UIView
+@interface KLControllerCard : UIView<UIGestureRecognizerDelegate>
 {
     @private
     CGFloat originY;

@@ -349,6 +349,8 @@
             [self.navigationController.navigationBar addGestureRecognizer: panGesture];
         }
         
+        panGesture.delegate = self;
+        
         //Add long touch recognizer
         if (self.noteViewController.cardEnablePressGesture) {
             UILongPressGestureRecognizer* pressGesture = [[UILongPressGestureRecognizer alloc] initWithTarget:self
@@ -356,6 +358,8 @@
             [pressGesture setMinimumPressDuration: self.noteViewController.cardMinimumPressDuration];
             //Add the gesture to the navigation bar
             [self.navigationController.navigationBar addGestureRecognizer:pressGesture];
+            
+             pressGesture.delegate = self;
         }
         
         //Initialize the state to default
@@ -366,6 +370,9 @@
 }
 
 #pragma mark - UIGestureRecognizer action handlers
+- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer{
+    return YES;
+}
 
 -(void) didPerformLongPress:(UILongPressGestureRecognizer*) recognizer {
 
