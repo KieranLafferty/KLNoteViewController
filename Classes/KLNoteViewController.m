@@ -121,7 +121,7 @@
     CGFloat originOffset = 0;
     for (int i = 0; i < index; i ++) {
         CGFloat scalingFactor = [self scalingFactorForIndex: i];
-        NSLog(@"%@", controllerCard.navigationController.navigationBar);
+//        NSLog(@"%@", controllerCard.navigationController.navigationBar);
         originOffset += scalingFactor * controllerCard.navigationController.navigationBar.frame.size.height * self.cardNavigationBarOverlap;
     }
     
@@ -328,7 +328,7 @@
         index = _index;
         originY = [noteView defaultVerticalOriginForControllerCard:self
                                                            atIndex: index];
-        [self setFrame: self.navigationController.view.bounds];
+        [self setFrame: noteView.view.bounds];
 
         //Initialize the view's properties
         [self setAutoresizesSubviews:YES];
@@ -488,9 +488,20 @@
     if (animated) {
         [UIView animateWithDuration:self.noteViewController.cardAnimationDuration animations:^{
             [self setState:state animated:NO];
+        } completion:^(BOOL finished) {
+            if (state == KLControllerCardStateFullScreen) {
+                // Fix scaling bug when expand to full size
+                self.frame = self.noteViewController.view.bounds;
+                self.navigationController.view.frame = self.frame;
+                self.navigationController.view.layer.cornerRadius = 0;
+            }
         }];
         return;
     }
+    
+    // Set corner radius
+    [self.navigationController.view.layer setCornerRadius: self.noteViewController.cardCornerRadius];    
+    
     //Full Screen State
     if (state == KLControllerCardStateFullScreen) {
         [self expandCardToFullSize: animated];
