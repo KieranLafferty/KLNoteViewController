@@ -62,6 +62,9 @@ typedef UInt32 KLControllerCardPanGestureScope;
 @property (nonatomic, assign) id<KLNoteViewControllerDataSource> dataSource;
 @property (nonatomic, assign) id<KLNoteViewControllerDelegate> delegate;
 
+//Navigation bar properties
+@property (nonatomic, strong) Class cardNavigationBarClass; //Use a custom class for the card navigation bar
+
 //Layout properties
 @property (nonatomic) CGFloat cardMinimizedScalingFactor;   //Amount to shrink each card from the previous one
 @property (nonatomic) CGFloat cardMaximizedScalingFactor;   //Maximum a card can be scaled to
