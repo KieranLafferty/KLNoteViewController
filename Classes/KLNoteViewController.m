@@ -152,6 +152,7 @@
         KLControllerCard* noteContainer = [[KLControllerCard alloc] initWithNoteViewController: self
                                                                                     navigationController: navigationController
                                                                                                    index:count];
+        noteContainer.viewController = viewController;
         [noteContainer setDelegate: self];
         [navigationControllers addObject: noteContainer];
         

@@ -45,6 +45,7 @@ typedef UInt32 KLControllerCardPanGestureScope;
 }
 @property (nonatomic, strong) UINavigationController* navigationController;
 @property (nonatomic, strong) KLNoteViewController* noteViewController;
+@property (nonatomic, strong) UIViewController* viewController; // viewController referenced controllerCard
 @property (nonatomic, strong) id<KLControllerCardDelegate> delegate;
 @property (nonatomic) CGPoint origin;
 @property (nonatomic) CGFloat panOriginOffset;
