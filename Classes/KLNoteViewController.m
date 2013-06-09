@@ -37,6 +37,7 @@
 
 //Distance to top of screen that must be passed in order to toggle full screen state transition
 #define kFullScreenDistanceThreshold 44.0
+#define kAllowsInteractionInDefaultState NO
 
 @interface KLNoteViewController ()
 - (void)configureDefaultSettings;
@@ -83,6 +84,8 @@
 
 - (void)configureDefaultSettings {
     _viewControllers = [[NSMutableArray alloc] initWithCapacity: [self.dataSource numberOfControllerCardsInNoteView:self]];
+    
+    self.allowsInteractionInDefaultState = kAllowsInteractionInDefaultState;
     self.cardNavigationBarClass = [UINavigationBar class];
     
     self.cardMinimizedScalingFactor = kDefaultMinimizedScalingFactor;
@@ -360,6 +363,7 @@ willBeginPanningGesture:(UIPanGestureRecognizer*) gesture {
 @interface KLControllerCard ()
 -(void) shrinkCardToScaledSize:(BOOL) animated;
 -(void) expandCardToFullSize:(BOOL) animated;
+-(void) allowUserInteraction:(BOOL) isAllowed;
 @end
 
 @implementation KLControllerCard
@@ -565,11 +569,13 @@ willBeginPanningGesture:(UIPanGestureRecognizer*) gesture {
     
     //Full Screen State
     if (state == KLControllerCardStateFullScreen) {
+        [self allowUserInteraction: YES];
         [self expandCardToFullSize: animated];
         [self setYCoordinate: 0];
     }
     //Default State
     else if (state == KLControllerCardStateDefault) {
+        [self allowUserInteraction: self.noteViewController.allowsInteractionInDefaultState];
         [self shrinkCardToScaledSize: animated];
         [self setYCoordinate: originY];
     }
@@ -625,7 +631,14 @@ willBeginPanningGesture:(UIPanGestureRecognizer*) gesture {
     NSLog(@"Index: %d \n YCoord: %f", [self.noteViewController indexForControllerCard:self], yValue);
     [self setFrame:CGRectMake(self.frame.origin.x, yValue, self.frame.size.width, self.frame.size.height)];
 }
-
+-(void) allowUserInteraction:(BOOL) isAllowed {
+    if ([self.viewController isKindOfClass:[UINavigationController class]]) {
+        [[(UINavigationController*)self.viewController topViewController].view setUserInteractionEnabled: isAllowed];
+    }
+    else {
+        [self.viewController.view setUserInteractionEnabled: isAllowed];
+    }
+}
 -(void) setFrame:(CGRect)frame {
     [super setFrame: frame];
     [self redrawShadow];
