@@ -48,7 +48,7 @@
     KLCustomViewController* viewController = [st instantiateViewControllerWithIdentifier:@"RootViewController"];
     [viewController setInfo: navDict];
 
-    //Return the custom view controller
+    //Return the custom view controller wrapped in a UINavigationController
     return [[UINavigationController alloc] initWithRootViewController:viewController];
 }
 
