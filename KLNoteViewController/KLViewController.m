@@ -38,9 +38,9 @@
 - (NSInteger)numberOfControllerCardsInNoteView:(KLNoteViewController*) noteView {
     return  [self.viewControllerData count];
 }
-- (UIViewController *)noteView:(KLNoteViewController*)noteView viewControllerForRowAtIndexPath:(NSIndexPath *)indexPath {
+- (UIViewController *)noteView:(KLNoteViewController*)noteView viewControllerAtIndex:(NSInteger)index {
     //Get the relevant data for the navigation controller
-    NSDictionary* navDict = [self.viewControllerData objectAtIndex: indexPath.row];
+    NSDictionary* navDict = [self.viewControllerData objectAtIndex: index];
     
     //Initialize a blank uiviewcontroller for display purposes
     UIStoryboard *st = [UIStoryboard storyboardWithName:[[NSBundle mainBundle].infoDictionary objectForKey:@"UIMainStoryboardFile"] bundle:[NSBundle mainBundle]];
@@ -49,17 +49,16 @@
     [viewController setInfo: navDict];
 
     //Return the custom view controller
-    return viewController;
+    return [[UINavigationController alloc] initWithRootViewController:viewController];
 }
 
 -(void) noteViewController: (KLNoteViewController*) noteViewController didUpdateControllerCard:(KLControllerCard*)controllerCard toDisplayState:(KLControllerCardState) toState fromDisplayState:(KLControllerCardState) fromState {
 
     
-    NSIndexPath* index = [noteViewController indexPathForControllerCard: controllerCard];
-    NSDictionary* navDict = [self.viewControllerData objectAtIndex: index.row];
+    NSInteger index = [noteViewController indexForControllerCard: controllerCard];
+    NSDictionary* navDict = [self.viewControllerData objectAtIndex: index];
     
     NSLog(@"%@ changed state %ld", [navDict objectForKey:@"title"], toState);
-    
 }
 - (IBAction)reloadCardData:(id)sender {
     [self reloadDataAnimated:YES];
