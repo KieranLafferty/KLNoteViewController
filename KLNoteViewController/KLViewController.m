@@ -49,13 +49,10 @@
     [viewController setInfo: navDict];
 
     //Return the custom view controller
-    return [[UINavigationController alloc] initWithRootViewController: [[UITableViewController alloc] init
-                                                                        ]];
+    return [[UINavigationController alloc] initWithRootViewController:viewController];
 }
 
--(void) noteViewController: (KLNoteViewController*) noteViewController didUpdateControllerCard:(KLControllerCard*)controllerCard toDisplayState:(KLControllerCardState) toState fromDisplayState:(KLControllerCardState) fromState {
-
-    
+-(void) noteViewController: (KLNoteViewController*) noteViewController didUpdateControllerCard:(KLControllerCard*)controllerCard toDisplayState:(KLControllerCardState) toState fromDisplayState:(KLControllerCardState) fromState {    
     NSInteger index = [noteViewController indexForControllerCard: controllerCard];
     NSDictionary* navDict = [self.viewControllerData objectAtIndex: index];
     

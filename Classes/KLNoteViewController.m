@@ -120,15 +120,10 @@
 
 - (void)viewDidLoad
 {
+    [super viewDidLoad];
     
     //Populate the navigation controllers to the controller stack
     [self reloadData];
-    
-    [super viewDidLoad];
-    
-	// Do any additional setup after loading the view.
-    [self reloadInputViews];
-    
 }
 
 #pragma Drawing Methods - Used to position and present the navigation controllers on screen
@@ -157,6 +152,9 @@
 }
 
 - (void) reloadData {
+    
+    self.controllerCards = nil;
+    [self.viewControllers removeAllObjects];
     //Get the number of navigation  controllers to expect
     
     //For each expected controller grab from the instantiating class and populate into local controller stack
@@ -190,7 +188,8 @@
 }
 - (void) reloadDataAnimated:(BOOL) animated {
     if (animated) {
-        [UIView animateWithDuration:self.cardReloadHideAnimationDuration animations:^{
+        [UIView animateWithDuration:self.cardReloadHideAnimationDuration
+                         animations:^{
             for (KLControllerCard* card in self.controllerCards) {
                 [card setState:KLControllerCardStateHiddenBottom animated:NO];
             }
@@ -369,15 +368,11 @@ willBeginPanningGesture:(UIPanGestureRecognizer*) gesture {
 @implementation KLControllerCard
 -(id) initWithNoteViewController: (KLNoteViewController*) noteViewController
                andViewController: (UIViewController*) viewController {
-    if (self = [super init]) {
+    if (self = [super initWithFrame: viewController.view.frame]) {
         _noteViewController = noteViewController;
         _viewController = viewController;
         
         originY = [noteViewController defaultVerticalOriginForControllerCard: self];
-        
-        //Set the frame of self to be the same size as the containing noteview controller
-        [self setFrame: _noteViewController.view.bounds];
-        
         
         //Initialize the view's properties
         [self setAutoresizesSubviews:YES];
@@ -391,10 +386,9 @@ willBeginPanningGesture:(UIPanGestureRecognizer*) gesture {
         //Configure gesture recognizers
         //Add Pan Gesture
         _panGesture = [[UIPanGestureRecognizer alloc] initWithTarget:self
-                                                                                     action:@selector(didPerformPanGesture:)];
-        
+                                                              action:@selector(didPerformPanGesture:)];
         _tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self
-                                                                                     action:@selector(didPerformTapGesture:)];
+                                                              action:@selector(didPerformTapGesture:)];
         [_tapGesture setNumberOfTapsRequired:  _noteViewController.cardMinimumTapsRequired];
         _tapGesture.delegate = self;
 
@@ -628,7 +622,6 @@ willBeginPanningGesture:(UIPanGestureRecognizer*) gesture {
 }
 
 -(void) setYCoordinate:(CGFloat)yValue {
-    NSLog(@"Index: %d \n YCoord: %f", [self.noteViewController indexForControllerCard:self], yValue);
     [self setFrame:CGRectMake(self.frame.origin.x, yValue, self.frame.size.width, self.frame.size.height)];
 }
 -(void) allowUserInteraction:(BOOL) isAllowed {
