@@ -552,7 +552,7 @@ willBeginPanningGesture:(UIPanGestureRecognizer*) gesture {
                 // Fix scaling bug when expand to full size
                 self.frame = self.noteViewController.view.bounds;
                 self.viewController.view.frame = self.frame;
-                self.viewController.view.layer.cornerRadius = 0;
+                self.viewController.view.layer.cornerRadius = 3.0;
             }
         }];
         return;
