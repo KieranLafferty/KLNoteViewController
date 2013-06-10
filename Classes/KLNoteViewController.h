@@ -66,8 +66,8 @@ typedef UInt32 KLControllerCardPanGestureScope;
 //KLNoteViewController manages the cards interfacing between the various cards
 @interface KLNoteViewController : UIViewController  <KLControllerCardDelegate>
 
-@property (nonatomic, assign) id<KLNoteViewControllerDataSource> dataSource;
-@property (nonatomic, assign) id<KLNoteViewControllerDelegate> delegate;
+@property (nonatomic, weak) id<KLNoteViewControllerDataSource> dataSource;
+@property (nonatomic, weak) id<KLNoteViewControllerDelegate> delegate;
 
 //Navigation bar properties
 @property (nonatomic, strong) Class cardNavigationBarClass; //Use a custom class for the card navigation bar
