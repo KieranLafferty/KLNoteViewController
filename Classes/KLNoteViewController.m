@@ -60,6 +60,7 @@
 
 - (id)initWithCoder:(NSCoder *)aDecoder
 {
+    
     self = [super initWithCoder:aDecoder];
     if (!self) {
         return nil;
@@ -411,6 +412,7 @@ willBeginPanningGesture:(UIPanGestureRecognizer*) gesture {
                 [_viewController.view addGestureRecognizer: _tapGesture];
             }
         }
+
     }
     return self;
 }
@@ -422,8 +424,7 @@ willBeginPanningGesture:(UIPanGestureRecognizer*) gesture {
 }
 
 -(void) didPerformTapGesture:(UITapGestureRecognizer*) recognizer {
-
-    if (self.state == KLControllerCardStateDefault && recognizer.state == UIGestureRecognizerStateEnded) {
+    if (recognizer.state == UIGestureRecognizerStateEnded) {
         //Toggle State
         [self toggleStateAnimated:YES];
     }

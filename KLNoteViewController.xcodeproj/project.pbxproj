@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		7722194316A90E1900E7DDC4 /* KLNoteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7722194216A90E1900E7DDC4 /* KLNoteViewController.m */; };
 		7722194516A90E3100E7DDC4 /* KLNoteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7722194216A90E1900E7DDC4 /* KLNoteViewController.m */; };
+		773237B117681ED80011CEAD /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 773237B017681ED80011CEAD /* QuartzCore.framework */; };
 		7740B087169248D200449E10 /* NavigationControllerData.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7740B086169248D200449E10 /* NavigationControllerData.plist */; };
 		7740B0A51693976500449E10 /* background-dark-gray-tex.png in Resources */ = {isa = PBXBuildFile; fileRef = 7740B09B1693976500449E10 /* background-dark-gray-tex.png */; };
 		7740B0A61693976500449E10 /* background-dark-gray-tex@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7740B09C1693976500449E10 /* background-dark-gray-tex@2x.png */; };
@@ -50,6 +51,7 @@
 /* Begin PBXFileReference section */
 		7722194116A90E1900E7DDC4 /* KLNoteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KLNoteViewController.h; path = Classes/KLNoteViewController.h; sourceTree = SOURCE_ROOT; };
 		7722194216A90E1900E7DDC4 /* KLNoteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KLNoteViewController.m; path = Classes/KLNoteViewController.m; sourceTree = SOURCE_ROOT; };
+		773237B017681ED80011CEAD /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		7740B086169248D200449E10 /* NavigationControllerData.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = NavigationControllerData.plist; sourceTree = "<group>"; };
 		7740B09B1693976500449E10 /* background-dark-gray-tex.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "background-dark-gray-tex.png"; sourceTree = "<group>"; };
 		7740B09C1693976500449E10 /* background-dark-gray-tex@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "background-dark-gray-tex@2x.png"; sourceTree = "<group>"; };
@@ -93,6 +95,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				773237B117681ED80011CEAD /* QuartzCore.framework in Frameworks */,
 				7797ED24168F8E0A00CB59EA /* UIKit.framework in Frameworks */,
 				7797ED26168F8E0A00CB59EA /* Foundation.framework in Frameworks */,
 				7797ED28168F8E0A00CB59EA /* CoreGraphics.framework in Frameworks */,
@@ -142,6 +145,7 @@
 		7797ED14168F8E0A00CB59EA = {
 			isa = PBXGroup;
 			children = (
+				773237B017681ED80011CEAD /* QuartzCore.framework */,
 				7797ED29168F8E0A00CB59EA /* KLNoteViewController */,
 				7797ED50168F8E0A00CB59EA /* KLNoteViewControllerTests */,
 				7797ED22168F8E0A00CB59EA /* Frameworks */,
