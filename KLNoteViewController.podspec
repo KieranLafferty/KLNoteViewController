@@ -6,7 +6,7 @@ Pod::Spec.new do |s|
   s.homepage     	= "http://www.cocoacontrols.com/platforms/ios/controls/klnoteviewcontroller"
   s.license      	= 'Apache 2.0'
   s.author       	= { "Kieran Lafferty" => "kieran.lafferty@gmail.com"}
-  s.source       	= { :git => "https://github.com/KieranLafferty/KLNoteViewController.git" }
+  s.source       	= { :git => "https://github.com/KieranLafferty/KLNoteViewController.git", :commit => "9920e34f81873f25d5e737d8b2c55b9a98dd5f42" }
   s.source_files 	= 'Classes/*.{h,m}'
   s.requires_arc 	= true
 end
