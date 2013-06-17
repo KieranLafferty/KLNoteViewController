@@ -22,6 +22,10 @@ Drag the included <code>KLNoteViewController.h, KLNoteViewController.m</code> fi
 
 * QuartzCore.framework
 
+Install via Cocoapods by adding the following line to your podfile
+
+	pod 'KLNoteViewController'
+
 ## Usage ##
 Import the header file and declare your controller to subclass KLNoteViewController 
 	#import "KLNoteViewController.h"
