@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+
 @class KLNoteViewController;
 @class KLControllerCard;
 @protocol KLNoteViewControllerDataSource;
@@ -25,6 +26,8 @@ enum {
     KLControllerCardPanGestureScopeNavigationControllerView     // the pan gesture works on the whole card view
 };
 typedef UInt32 KLControllerCardPanGestureScope;
+
+typedef void (^transitionStateBlock)(UIViewController* viewController, KLControllerCardState fromState, KLControllerCardState);
 
 @protocol KLControllerCardDelegate <NSObject>
 @optional
@@ -57,6 +60,7 @@ typedef UInt32 KLControllerCardPanGestureScope;
 @property (nonatomic, strong) UITapGestureRecognizer* tapGesture;
 -(id) initWithNoteViewController: (KLNoteViewController*) noteViewController
                andViewController:(UIViewController*) viewController;
+
 -(void) toggleStateAnimated:(BOOL) animated;
 -(void) setState:(KLControllerCardState) state animated:(BOOL) animated;
 -(void) setYCoordinate:(CGFloat)yValue;
@@ -65,7 +69,7 @@ typedef UInt32 KLControllerCardPanGestureScope;
 
 //KLNoteViewController manages the cards interfacing between the various cards
 @interface KLNoteViewController : UIViewController  <KLControllerCardDelegate>
-
+@property (nonatomic, copy) transitionStateBlock stateTransitionBlock;
 @property (nonatomic, weak) id<KLNoteViewControllerDataSource> dataSource;
 @property (nonatomic, weak) id<KLNoteViewControllerDelegate> delegate;
 

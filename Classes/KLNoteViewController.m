@@ -233,7 +233,6 @@
     }
 }
 
-
 - (NSArray*) controllerCardsAboveCard:(KLControllerCard*) card {
     NSInteger index = [self indexForControllerCard:card];
     
@@ -316,6 +315,9 @@
     
 }
 -(void) noteViewController: (KLNoteViewController*) noteViewController didUpdateControllerCard:(KLControllerCard*)controllerCard toDisplayState:(KLControllerCardState) toState fromDisplayState:(KLControllerCardState) fromState {
+    if (self.stateTransitionBlock) {
+        self.stateTransitionBlock(controllerCard.viewController, fromState, toState);
+    }
     if ([self.delegate respondsToSelector:@selector(noteViewController:didUpdateControllerCard:toDisplayState:fromDisplayState:)])
     {
         [self.delegate noteViewController:self
